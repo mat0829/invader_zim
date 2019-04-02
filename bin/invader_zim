@@ -1,6 +1,11 @@
 #!/usr/bin/env ruby
 
-puts "Welcome pitiful human! It is I, ZIM!"
+
+
+puts ""
+puts "Welcome pitiful human! It is I, ZIM!".strip
+puts ""
+
 
 puts "Which one of our stinky characters would you like to know more about?"
-
+puts ""
