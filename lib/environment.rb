@@ -7,3 +7,4 @@ require_relative "invader_zim/scraper"
 require 'pry'
 require 'open-uri'
 require 'nokogiri'
+require 'cli-colorize'

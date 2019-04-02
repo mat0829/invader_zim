@@ -15,8 +15,8 @@
          name = character.css(".lightbox-caption center b a[href]").text,
          debut = character.css("[href]")[2].text,
          character_page = "www.zim.fandom.com" + character.css("b a").map { |anchor| anchor["href"] }.first
-        end
+          end
         
+         end
       end
-        
         

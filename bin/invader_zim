@@ -1,12 +1,13 @@
 #!/usr/bin/env ruby
 require_relative "../lib/environment"
-require 'cli-colorize'
 
-str = 'The ' + 'Quick'.bright + ' Red'.red + ' Fox ' + 'Jumps'.blink + ' Over the ' + 'Lazy '.underline + 'Brown'.brown + ' Dog'
+
+
+
 
 
 puts ""
-puts "Welcome pitiful human! It is I, ZIM!".strip
+puts CLIColorize.colorize('Welcome pitiful human! It is I, ZIM!', :green).strip
 puts ""
 
 
