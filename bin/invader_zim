@@ -1,15 +1,21 @@
 #!/usr/bin/env ruby
 require_relative "../lib/environment"
 
-
-
-
-
-
-puts ""
-puts CLIColorize.colorize('Welcome pitiful human! It is I, ZIM!', :green).strip
+puts CLIColorize.colorize('+-+-+-+-+-+-+-+ +-+-+-+', :green).strip
+puts CLIColorize.colorize('|I|n|v|a|d|e|r| |Z|i|m|', :green).strip
+puts CLIColorize.colorize('+-+-+-+-+-+-+-+ +-+-+-+', :green).strip
 puts ""
 
-
-puts "Which one of our stinky characters would you like to know more about?"
+puts CLIColorize.colorize('Welcome pitiful human! It is I, ZIM!', :red).strip
 puts ""
+
+puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red).strip
+puts ""
+
+puts CLIColorize.colorize("Which one of our FILTHY characters would you like to know more about?", :red).strip
+
+
+
+
+
+
