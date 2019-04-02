@@ -40,5 +40,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "nokogiri"
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "rmagick"
+  spec.add_development_dependency "cli-colorize", '~> 2.0'
 end
