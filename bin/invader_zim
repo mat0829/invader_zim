@@ -15,6 +15,20 @@ puts ""
 #puts CLIColorize.colorize('### #    #   ##   #    # #####  ###### #    #    ####### # #    #', :green).strip
 #puts ""
 
+image = MiniMagick::Image.open("https://pm1.narvii.com/6022/65c3cb872155630bcd6a9b81fb764a5712f4fe1d_128.jpg")
+image.contrast
+image.write("invader_zim_doom.jpg")
+
+CatpixMini::print_image "invader_zim_doom.jpg",
+  :limit_x => 1.0,
+  :limit_y => 0,
+  :center_x => false,
+  :center_y => false,
+  :bg => "white",
+  :bg_fill => true,
+  :resolution => "low"
+
+
 
 puts CLIColorize.colorize('Welcome pitiful human! It is I, ZIM!', :red).strip
 puts ""
