@@ -16,7 +16,6 @@ puts ""
 #puts ""
 
 
-
 puts CLIColorize.colorize('Welcome pitiful human! It is I, ZIM!', :red).strip
 puts ""
 
