@@ -15,20 +15,19 @@ puts ""
 #puts CLIColorize.colorize('### #    #   ##   #    # #####  ###### #    #    ####### # #    #', :green).strip
 #puts ""
 
-open("https://www.clipartmax.com/png/middle/298-2987521_invader-zim-scream-render-by-neonstartapeinvasion-invader-zim.png") {|f|
-   File.open("invader_zim_doom.jpg","wb") do |file|
-     file.puts f.read
-   end
-}
+image = MiniMagick::Image.open("https://i.pinimg.com/originals/07/e8/2e/07e82eb13044b7346f479c4c9d3a39cf.png")
+image.contrast
+image.write("from_internets.jpg")
 
-CatpixMini::print_image "invader_zim_doom.jpg",
-  :limit_x => 0.5,
+
+CatpixMini::print_image "from_internets.jpg",
+  :limit_x => 1,
   :limit_y => 0,
   :center_x => false,
   :center_y => false,
   :bg => "white",
   :bg_fill => false,
-  :resolution => "low"
+  :resolution => "high"
 
 
 
