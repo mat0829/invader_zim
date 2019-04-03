@@ -43,4 +43,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "cli-colorize", '~> 2.0'
   spec.add_development_dependency 'mini_magick', '~> 4.7'
   spec.add_development_dependency 'catpix_mini', '~> 0.1.1'
+  spec.add_development_dependency 'tco', '~> 0.1.8'
 end

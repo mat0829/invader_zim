@@ -10,6 +10,6 @@ require 'nokogiri'
 require 'cli-colorize'
 require 'mini_magick'
 require 'catpix_mini'
-
+require 'tco'
 
 
