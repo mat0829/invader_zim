@@ -9,6 +9,8 @@ require 'open-uri'
 require 'nokogiri'
 require 'cli-colorize'
 require 'ascmaster'
+require 'mini_magick'
+require 'catpix_mini'
 
 
 
