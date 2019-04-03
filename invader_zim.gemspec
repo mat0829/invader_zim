@@ -41,4 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "nokogiri"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "cli-colorize", '~> 2.0'
+  spec.add_development_dependency 'mini_magick', '~> 4.9', '>= 4.9.3'
 end

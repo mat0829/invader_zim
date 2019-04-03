@@ -1,19 +1,19 @@
 #!/usr/bin/env ruby
 require_relative "../lib/environment"
 
-#puts CLIColorize.colorize('+-+-+-+-+-+-+-+ +-+-+-+', :green).strip
-#puts CLIColorize.colorize('|I|n|v|a|d|e|r| |Z|i|m|', :green).strip
-#puts CLIColorize.colorize('+-+-+-+-+-+-+-+ +-+-+-+', :green).strip
-#puts ""
-
-puts CLIColorize.colorize('###                                              #######         ', :green).strip 
-puts CLIColorize.colorize(' #  #    # #    #   ##   #####  ###### #####          #  # #    #', :green).strip 
-puts CLIColorize.colorize(' #  ##   # #    #  #  #  #    # #      #    #        #   # ##  ##', :green).strip 
-puts CLIColorize.colorize(' #  # #  # #    # #    # #    # #####  #    #       #    # # ## #', :green).strip 
-puts CLIColorize.colorize(' #  #  # # #    # ###### #    # #      #####       #     # #    #', :green).strip 
-puts CLIColorize.colorize(' #  #   ##  #  #  #    # #    # #      #   #      #      # #    #', :green).strip 
-puts CLIColorize.colorize('### #    #   ##   #    # #####  ###### #    #    ####### # #    #', :green).strip
+puts CLIColorize.colorize('+-+-+-+-+-+-+-+ +-+-+-+', :green).strip
+puts CLIColorize.colorize('|I|n|v|a|d|e|r| |Z|i|m|', :green).strip
+puts CLIColorize.colorize('+-+-+-+-+-+-+-+ +-+-+-+', :green).strip
 puts ""
+
+#puts CLIColorize.colorize('###                                              #######         ', :green).strip 
+#puts CLIColorize.colorize(' #  #    # #    #   ##   #####  ###### #####          #  # #    #', :green).strip 
+#puts CLIColorize.colorize(' #  ##   # #    #  #  #  #    # #      #    #        #   # ##  ##', :green).strip 
+#puts CLIColorize.colorize(' #  # #  # #    # #    # #    # #####  #    #       #    # # ## #', :green).strip 
+#puts CLIColorize.colorize(' #  #  # # #    # ###### #    # #      #####       #     # #    #', :green).strip 
+#puts CLIColorize.colorize(' #  #   ##  #  #  #    # #    # #      #   #      #      # #    #', :green).strip 
+#puts CLIColorize.colorize('### #    #   ##   #    # #####  ###### #    #    ####### # #    #', :green).strip
+#puts ""
 
 
 
