@@ -15,12 +15,12 @@ puts ""
 #puts CLIColorize.colorize('### #    #   ##   #    # #####  ###### #    #    ####### # #    #', :green).strip
 #puts ""
 
-image = MiniMagick::Image.open("http://www.roomwithamoose.com/goodies/icons/gaz3.gif")
+image = MiniMagick::Image.open("http://www.roomwithamoose.com/goodies/icons/gazcute.gif")
 image.contrast
-image.write("gaz1.gif")
+image.write("gaz.gif")
 
 
-CatpixMini::print_image "gaz1.gif",
+CatpixMini::print_image "gaz.gif",
   :limit_x => 1,
   :limit_y => 0,
   :center_x => false,
