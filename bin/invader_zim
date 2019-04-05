@@ -15,12 +15,12 @@ puts ""
 #puts CLIColorize.colorize('### #    #   ##   #    # #####  ###### #    #    ####### # #    #', :green).strip
 #puts ""
 
-image = MiniMagick::Image.open("https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/girtransformation.png")
-image.contrast
-image.write("gir_transformation.gif")
+#image = MiniMagick::Image.open("https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/reca2.png")
+#image.contrast
+#image.write("recap_kid.gif")
 
 
-CatpixMini::print_image "gir_transformation.gif",
+CatpixMini::print_image "robotdadp.gif",
   :limit_x => 1,
   :limit_y => 0,
   :center_x => false,
