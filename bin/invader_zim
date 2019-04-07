@@ -2,12 +2,12 @@
 require_relative "../lib/environment"
 
 
-#image = MiniMagick::Image.open("https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/moosered.png")
+#image = MiniMagick::Image.open("https://img00.deviantart.net/4fa9/i/2005/008/2/1/mini_moose_by_chunhyaeng.gif")
 #image.contrast
-#image.write("mini_moose.gif")
+#image.write("mini_moose1.gif")
 
 
-CatpixMini::print_image "zim.gif",
+CatpixMini::print_image "mini_moose.gif",
   :limit_x => 1,
   :limit_y => 0,
   :center_x => false,
