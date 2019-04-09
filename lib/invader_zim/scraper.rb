@@ -30,7 +30,9 @@
 
       character_table.each do |table|
       character_page_traits << {
-        :homeworld => table.css("a")
+        :homeworld => table.css("a")[2].text,
+        :affiliation => table.css("a[href]")[6].text,
+        :gender => table.css("")[2].text
       }
       end
       puts character_page_traits

@@ -7,7 +7,7 @@ require_relative "../lib/environment"
 #image.write("mini_moose1.gif")
 
 
-CatpixMini::print_image "mini_moose.gif",
+CatpixMini::print_image "zim.gif",
   :limit_x => 1,
   :limit_y => 0,
   :center_x => false,
