@@ -32,7 +32,7 @@
       character_page_traits << {
         :homeworld => table.css("a")[2].text,
         :affiliation => table.css("a[href]")[6].text,
-        :gender => table.css("")[2].text
+        :gender => table.css("tr[6] td[2]").text.strip
       }
       end
       puts character_page_traits
