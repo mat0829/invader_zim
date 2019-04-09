@@ -1,14 +1,13 @@
-      require 'nokogiri'
-      require 'open-uri'
+  require 'nokogiri'
+  require 'open-uri'
         
         
-        
-      class Scraper
+  class Scraper
 
-  def self.scrape_index_page(index_url)
-    index_url = "https://zim.fandom.com/wiki/Characters"
+    def self.scrape_index_page(index_url)
+      index_url = "https://zim.fandom.com/wiki/Characters"
 
-    doc = Nokogiri::HTML(open(index_url))
+      doc = Nokogiri::HTML(open(index_url))
       character_info = doc.css(".wikia-gallery-item")
       character_array = []
     
@@ -36,7 +35,6 @@
       }
       end
       puts character_page_traits
-
     end
       
 end
