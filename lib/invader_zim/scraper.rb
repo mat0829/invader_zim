@@ -9,16 +9,16 @@
 
       doc = Nokogiri::HTML(open(index_url))
       character_info = doc.css(".wikia-gallery-item")
-      character_array = []
+      characters_array = []
     
       character_info.each do |character|
-      character_array << {
+      characters_array << {
         :name => character.css(".lightbox-caption center b a[href]").text,
         :debut => character.css("[href]")[2].text,
         :character_url => "www.zim.fandom.com" + character.css("b a").map { |anchor| anchor["href"] }.first
       }
         end
-      puts character_array
+      characters_array
   end
 
     def self.scrape_character_page(character_url)
@@ -28,13 +28,13 @@
       character_page_traits = []
 
       character_table.each do |table|
-      character_page_traits << {
+      character_page_hash << {
         :homeworld => table.css("a")[2].text,
         :affiliation => table.css("a[href]")[6].text,
         :gender => table.css("tr[6] td[2]").text.strip
       }
       end
-      puts character_page_traits
+      character_page_hash
     end
       
 end
