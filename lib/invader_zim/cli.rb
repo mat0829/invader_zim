@@ -3,7 +3,7 @@ class InvaderZim::CLI
   def call
     
     CatpixMini::print_image "zim.gif",
-  :limit_x => 1,
+  :limit_x => 0.4,
   :limit_y => 0,
   :center_x => false,
   :center_y => false,
@@ -11,8 +11,15 @@ class InvaderZim::CLI
   :bg_fill => false,
   :resolution => "high"
   
-    puts CLIColorize.colorize('Welcome pitiful human! It is I, ZIM!', :red)
-    puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red).strip
+  sleep(3)
+  
+  puts CLIColorize.colorize("Welcome pitiful human! It is I, ZIM!", :red).strip
+  puts ""
+  
+  sleep(5)
+  
+  puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red)
+  
   end
   
 end
