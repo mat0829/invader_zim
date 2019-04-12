@@ -16,21 +16,23 @@
         character_object.name = character.css(".lightbox-caption center b a[href]").text,
         character_object.debut = character.css("[href]")[2].text,
         character_object.character_url = "www.zim.fandom.com" + character.css("b a").map { |anchor| anchor["href"] }.first
-      end
-    end
-
-    def self.scrape_character_page(character_url)
-      html = open(character_url)
-      doc = Nokogiri::HTML(html)
-      character_table = doc.css(".infobox")
-
-      character_table.each do |table|
+        end
       
-        character_page_object = Character.new
-        character_page_object.homeworld = table.css("a")[2].text,
-        character_page_object.affiliation = table.css("a[href]")[6].text,
-        character_page_object.gender = table.css("tr[6] td[2]").text.strip
-      end
     end
+
+    #def self.scrape_character_page
+      
+      #html = open(character_url)
+      #doc = Nokogiri::HTML(html)
+      #character_table = doc.css(".infobox")
+
+      #character_table.each do |table|
+      
+        #character_page_object = Character.new
+        #character_page_object.homeworld = table.css("a")[2].text,
+        #character_page_object.affiliation = table.css("a[href]")[6].text,
+        #character_page_object.gender = table.css("tr[6] td[2]").text.strip
+      #end
+    #end
     
 end

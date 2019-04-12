@@ -4,7 +4,7 @@ class InvaderZim::CLI
   
   def call
     Scraper.scrape_index_page
-    Scraper.scrape
+  
     
     
     
