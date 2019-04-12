@@ -3,8 +3,8 @@ class InvaderZim::CLI
   
   
   def call
-    make_characters
-    #add_attributes_to_characters
+    Scraper.scrape_index_page
+    Scraper.scrape
     
     
     
@@ -32,18 +32,6 @@ class InvaderZim::CLI
   
   
   end
-  
-  def make_characters
-    characters_array = Scraper.scrape_index_page('index.html')
-    Character.create_from_collection(characters_array)
-  end
-  
-  #def add_attributes_to_characters
-  #  Character.all.each do |character|
-  #    attributes = Scraper.scrape_character_page('index.html' + character.character_url)
-  #    character.add_character_attributes(attributes)
-  #  end
-  #end
   
 end
   
