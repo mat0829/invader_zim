@@ -1,6 +1,12 @@
 class InvaderZim::CLI 
   
+  
+  
   def call
+    make_characters
+    #add_attributes_to_characters
+    
+    
     
     CatpixMini::print_image "zim.gif",
   :limit_x => 0.4,
@@ -13,14 +19,31 @@ class InvaderZim::CLI
   
   sleep(3)
   
-  puts CLIColorize.colorize("Welcome pitiful human! It is I, ZIM!", :red).strip
+  puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :red).strip
   puts ""
   
   sleep(5)
   
   puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red)
+  puts ""
+  sleep(5)
+  
+  puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or a different, far less superior character?", :red)
+  
   
   end
+  
+  def make_characters
+    characters_array = Scraper.scrape_index_page('index.html')
+    Character.create_from_collection(characters_array)
+  end
+  
+  #def add_attributes_to_characters
+  #  Character.all.each do |character|
+  #    attributes = Scraper.scrape_character_page('index.html' + character.character_url)
+  #    character.add_character_attributes(attributes)
+  #  end
+  #end
   
 end
   
