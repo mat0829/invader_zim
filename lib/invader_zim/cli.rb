@@ -1,9 +1,11 @@
 class InvaderZim::CLI 
+  Base_Path = "https://zim.fandom.com/wiki"
   
   
   
   def call
     Scraper.scrape_index_page
+    Scraper.scrape_character_page
   
     
     

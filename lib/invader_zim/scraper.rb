@@ -19,7 +19,8 @@
       end
     end
 
-    def self.scrape_character_page(character_url)
+    def self.scrape_character_page(name)
+      character_url = "https://zim.fandom.com/wiki/Zim"
       html = open(character_url)
       doc = Nokogiri::HTML(html)
       character_table = doc.css(".infobox")
