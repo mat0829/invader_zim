@@ -1,11 +1,11 @@
-class CLI 
+class InvaderZim::CLI 
   Base_Path = "https://zim.fandom.com/wiki"
   
   
   
   def call
-    Scraper.scrape_index_page.new
-    Scraper.scrape_character_page.new
+    Scraper.scrape_index_page
+    Scraper.scrape_character_page
   
     
     
@@ -32,9 +32,7 @@ class CLI
   
   puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or a different, far less superior character?", :red)
   puts ""
-  
-  puts "#{character.name}"
-  
+
   end
   
 end
@@ -43,16 +41,3 @@ end
 #image = MiniMagick::Image.open("https://img00.deviantart.net/4fa9/i/2005/008/2/1/mini_moose_by_chunhyaeng.gif")
 #image.contrast
 #image.write("mini_moose1.gif")
-
-
-
-
-
-
-
-
-
-#puts ""
-
-#puts CLIColorize.colorize("Which one of our FILTHY characters would you like to know more about?", :red).strip
-#puts ""
