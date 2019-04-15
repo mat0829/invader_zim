@@ -2,7 +2,7 @@
   require 'open-uri'
         
         
-  class Scraper
+  class InvaderZim::Scraper
 
     def self.scrape_index_page
       index_url = "https://zim.fandom.com/wiki/Characters"
@@ -19,7 +19,7 @@
       end
     end
 
-    def self.scrape_character_page(name)
+    def self.scrape_character_page
       character_url = "https://zim.fandom.com/wiki/Zim"
       html = open(character_url)
       doc = Nokogiri::HTML(html)

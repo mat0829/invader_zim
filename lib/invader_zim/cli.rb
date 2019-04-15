@@ -4,8 +4,8 @@ class InvaderZim::CLI
   
   
   def call
-    Scraper.scrape_index_page
-    Scraper.scrape_character_page
+    InvaderZim::Scraper.scrape_index_page.new
+    InvaderZim::Scraper.scrape_character_page.new
   
     
     
@@ -31,7 +31,9 @@ class InvaderZim::CLI
   sleep(5)
   
   puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or a different, far less superior character?", :red)
+  puts ""
   
+  puts "#{character.name}"
   
   end
   
