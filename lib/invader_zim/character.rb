@@ -1,4 +1,4 @@
-class InvaderZim::Character
+class Character
   attr_accessor :name, :debut, :character_url, :homeworld, :affiliation, :gender
   @@all = []
 

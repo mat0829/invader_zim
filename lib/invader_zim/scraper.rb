@@ -2,7 +2,7 @@
   require 'open-uri'
         
         
-  class InvaderZim::Scraper
+  class Scraper
 
     def self.scrape_index_page
       index_url = "https://zim.fandom.com/wiki/Characters"
