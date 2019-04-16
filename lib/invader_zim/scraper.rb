@@ -8,14 +8,13 @@ class Scraper
 
     doc = Nokogiri::HTML(open(index_url))
       character_info = doc.css(".wikia-gallery-item")
-    
+      characters = []
       character_info.each do |character|
-        name = character.css(".lightbox-caption center b a[href]").text,
-        debut = character.css("[href]")[2].text,
-        character_url = "www.zim.fandom.com" + character.css("b a").first["href"]
-        
-
-        Character.new(name, debut, character_url)
+        character = {}
+        character.name = character.css(".lightbox-caption center b a[href]").text,
+        character.debut = character.css("[href]")[2].text,
+        character.character_url = "www.zim.fandom.com" + character.css("b a").first["href"]
+        characters << character
       end
     end
     
@@ -24,13 +23,13 @@ class Scraper
       html = open(profile_url)
       doc = Nokogiri::HTML(html)
       character_table = doc.css(".infobox")
-
+      characters = []
       character_table.each do |table|
-        homeworld = table.css("a")[2].text,
-        affiliation = table.css("a[href]")[6].text,
-        gender = table.css("tr[6] td[2]").text.strip
-        
-        Character.new(homeworld, affiliation, gender)
+        character = {}
+        character.homeworld = table.css("a")[2].text,
+        character.affiliation = table.css("a[href]")[6].text,
+        character.gender = table.css("tr[6] td[2]").text.strip
+        characters << character
       end
     end
   

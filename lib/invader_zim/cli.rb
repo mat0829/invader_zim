@@ -2,6 +2,14 @@ class InvaderZim::CLI
   
   def start
     Scraper.scrape_index_page
+    make_characters
+  end
+  
+  def make_characters
+    characters = Character.all 
+    characters.each do |character|
+      puts character.name 
+    end
   end
   
   
