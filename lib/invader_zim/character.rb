@@ -3,18 +3,21 @@ class Character
   
   @@all = []
 
-  def initialize(name = nil, debut = nil, character_url = nil, homeworld = nil, affiliation = nil, gender = nil)
-     @name = name
-     @debut = debut
-     @character_url = character_url
-     @homeworld = homeworld
-     @affiliation = affiliation
-     @gender = gender
-     @@all << self
+  def initialize(character_hash)
+    character_hash.each {|k, v| self.send("#{k}=", v)}
+    @@all << self
   end
-  
+
+  def self.create_from_collection(characters_array)
+    characters_array.each {|character| Character.new(character)}
+  end
+
+  def add_character_attributes(attributes_hash)
+    attributes_hash.each {|k, v| self.send("#{k}=", v)}
+  end
+
   def self.all
     @@all
   end
-
+  
 end

@@ -1,14 +1,24 @@
 class InvaderZim::CLI 
   
+  
+  
+  
+  
   def start
-    Scraper.scrape_index_page
     make_characters
+    add_attributes_to_characters
+  
   end
   
   def make_characters
-    characters = Character.all 
-    characters.each do |character|
-      puts character.name 
+    characters_array = Scraper.scrape_index_page('index.html')
+    Character.create_from_collection(characters_array)
+  end
+  
+  def add_attributes_to_characters
+    Character.all.each do |character|
+      attributes = Scraper.scrape_profile_page(character)
+      character.add_character_attributes(attributes)
     end
   end
   
