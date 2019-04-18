@@ -1,9 +1,6 @@
 class InvaderZim::CLI 
   
   
-  
-  
-  
   def start
     make_characters
     add_attributes_to_characters

@@ -24,14 +24,18 @@ require 'open-uri'
     def self.scrape_profile_page(character)
      html = open(character.profile_url)
      doc = Nokogiri::HTML(html)
-     character_table = doc.css(".infobox")
-     
-     character_table.each do |table|
-       character.homeworld = table.css("a")[2].text,
-       character.affiliation = table.css("a[href]")[6].text,
-       character.gender = table.css("tr[6] td[2]").text.strip
-     end
-     
+     character_table = doc.css(".WikiaArticle")
+      character_page_traits = []
+
+      character_table.each do |table|
+      character_page_traits << {
+        :introduction => table.css("p")[2].text.strip.gsub(/[\"\n\u00A0]/, ' '),
+        
+        :appearence => table.css("p")[4].text.gsub(/[\"\n]/, ''),
+        :personality => table.css("p")[6].text.gsub(/[\"\n]/, '')
+      }
+      end
+      character_page_traits
     end
     
   end

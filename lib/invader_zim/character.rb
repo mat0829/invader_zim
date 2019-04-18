@@ -1,5 +1,5 @@
 class Character
-  attr_accessor :name, :debut, :profile_url, :homeworld, :affiliation, :gender
+  attr_accessor :name, :debut, :profile_url, :introduction, :appearence, :personality
   
   @@all = []
 
@@ -12,9 +12,9 @@ class Character
     characters_array.each {|character| Character.new(character)}
   end
 
-  #def add_character_attributes(attributes_hash)
-    #attributes_hash.each {|k, v| self.send("#{k}=", v)}
-  #end
+  def add_character_attributes(attributes_hash)
+    attributes_hash.each {|k, v| self.send("#{k}=", v)}
+  end
 
   def self.all
     @@all
