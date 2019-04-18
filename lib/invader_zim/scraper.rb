@@ -15,7 +15,7 @@ require 'open-uri'
       characters << {
         :name => character.css(".lightbox-caption center b a[href]").text,
         :debut => character.css("[href]")[2].text,
-        :profile_url => "www.zim.fandom.com" + character.css("b a").first["href"]
+        :profile_url => "https://zim.fandom.com" + character.css("b a").first["href"]
       }
         end
         characters
