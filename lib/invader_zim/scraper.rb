@@ -25,16 +25,15 @@ require 'open-uri'
      html = open(character.profile_url)
      doc = Nokogiri::HTML(html)
      character_table = doc.css(".infobox")
-     profile_page_traits = []      
      
      character_table.each do |table|
-     profile_page_traits << {
+       character << {
        :homeworld => table.css("a")[2].text,
        :affiliation => table.css("a[href]")[6].text,
        :gender => table.css("tr[6] td[2]").text.strip
-     }
+       }
      end
-     profile_page_traits
+     character
     end
     
   end
