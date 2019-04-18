@@ -27,13 +27,11 @@ require 'open-uri'
      character_table = doc.css(".infobox")
      
      character_table.each do |table|
-       character << {
-       :homeworld => table.css("a")[2].text,
-       :affiliation => table.css("a[href]")[6].text,
-       :gender => table.css("tr[6] td[2]").text.strip
-       }
+       character.homeworld = table.css("a")[2].text,
+       character.affiliation = table.css("a[href]")[6].text,
+       character.gender = table.css("tr[6] td[2]").text.strip
      end
-     character
+     
     end
     
   end

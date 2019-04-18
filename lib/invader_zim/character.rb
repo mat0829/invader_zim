@@ -12,9 +12,9 @@ class Character
     characters_array.each {|character| Character.new(character)}
   end
 
-  def add_character_attributes(attributes_hash)
-    attributes_hash.each {|k, v| self.send("#{k}=", v)}
-  end
+  #def add_character_attributes(attributes_hash)
+    #attributes_hash.each {|k, v| self.send("#{k}=", v)}
+  #end
 
   def self.all
     @@all
