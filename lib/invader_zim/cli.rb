@@ -4,7 +4,14 @@ class InvaderZim::CLI
   def start
     make_characters
     add_attributes_to_characters
+    show_characters
+  end
   
+  def show_characters
+    characters = Character.all
+    characters.each do |character|
+      puts character.name
+    end
   end
   
   def make_characters
