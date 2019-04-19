@@ -3,7 +3,7 @@ class InvaderZim::CLI
   
   def start
     make_characters
-    add_attributes_to_characters
+    #add_attributes_to_characters
   
   end
   
@@ -12,22 +12,22 @@ class InvaderZim::CLI
     Character.create_from_collection(characters_array)
   end
   
-  def add_attributes_to_characters
-    Character.all.each do |character|
-      attributes = Scraper.scrape_profile_page(character)
-      character.add_character_attributes(attributes)
-    end
-  end
+  #def add_attributes_to_characters
+  #  Character.all.each do |character|
+  #    attributes = Scraper.scrape_profile_page(character)
+  #    character.add_character_attributes(attributes)
+  #  end
+  #end
   
   
-  #CatpixMini::print_image "zim.gif",
-  #:limit_x => 0.4,
-  #:limit_y => 0,
-  #:center_x => false,
-  #:center_y => false,
-  #:bg => "white",
-  #:bg_fill => false,
-  #:resolution => "high"
+  CatpixMini::print_image "zim.gif",
+  :limit_x => 0.4,
+  :limit_y => 0,
+  :center_x => false,
+  :center_y => false,
+  :bg => "white",
+  :bg_fill => false,
+  :resolution => "high"
   
   #sleep(3)
   
