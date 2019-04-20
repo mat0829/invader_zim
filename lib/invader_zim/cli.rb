@@ -9,10 +9,9 @@ class InvaderZim::CLI
   end
   
   def show_characters
-    puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :red).strip
     characters = Character.all
     characters.each.with_index(1) do |character, i|
-    puts "#{i}. #{character.name}"
+    puts CLIColorize.colorize("#{i}. #{character.name}", :green)
     end
   end
   
@@ -46,9 +45,16 @@ class InvaderZim::CLI
     puts ""
     sleep(4)
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?", :red)
-    puts ""
     sleep(4)
   end
+  
+  #def menu
+  #  input = nil
+  #  while input != "exit"
+  #    puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit:"
+  #  input = gets.strip.downcase
+  #end
+  
 end
   
   
