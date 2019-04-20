@@ -3,7 +3,6 @@ class InvaderZim::CLI
   
   def call
     make_characters
-    add_attributes_to_characters
     introduction
     menu
   end
@@ -15,6 +14,7 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("Choose a character's number from the list and hit enter.", :red)
     input = gets.strip
     character = Character.find(input.to_i)
+    add_attributes_to_characters(character)
     show_character(character)
     
   end
@@ -70,11 +70,11 @@ class InvaderZim::CLI
     Character.create_from_collection(characters_array)
   end
   
-  def add_attributes_to_characters
-    Character.all.each do |character|
+  def add_attributes_to_characters(character)
+    #Character.all.each do |character|
       attributes = Scraper.scrape_profile_page(character)
       character.add_character_attributes(attributes)
-    end
+    #end
   end
   
 end
