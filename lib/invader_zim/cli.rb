@@ -11,8 +11,8 @@ class InvaderZim::CLI
   def menu
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?", :red)
     sleep(4)
-    puts CLIColorize.colorize("Choose a character's number from the list and hit enter.", :red)
     show_characters_list
+    puts CLIColorize.colorize("Choose a character's number from the list and hit enter.", :red)
     input = gets.strip
     character = Character.find(input.to_i)
     show_character(character)
@@ -48,10 +48,21 @@ class InvaderZim::CLI
      puts "Name:  #{character.name}"
      puts ""
      puts "Episode Debut:  #{character.debut}"
-     puts CLIColorize.colorize("Would you like to visit #{character.name}'s webpage?", :red).strip
-     puts 
-     puts "Character Webpage:  #{character.profile_url}"
-     puts ""
+     
+     puts CLIColorize.colorize("Would you like to gain more knowledges about a different character? Enter Y or N", :red).strip
+     
+     input = gets.strip.downcase
+     if input == "y"
+      menu
+     elsif input == "n"
+      puts ""
+      puts "No! You lie! [makes wild scratching motions with his arms] YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
+      exit
+     else
+      puts ""
+      puts "Have you the brain worms!? Let me try this again."
+      menu
+     end
   end
   
   def make_characters
