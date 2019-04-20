@@ -5,10 +5,16 @@ class InvaderZim::CLI
     make_characters
     add_attributes_to_characters
     introduction
+    menu
   end
   
   def menu
+    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?", :red)
     show_characters_list
+    input = gets.strip
+    character = Character.find(input.to_i)
+    show_character(character)
+    
   end
   
   def introduction
@@ -30,15 +36,20 @@ class InvaderZim::CLI
   end
   
   def show_characters_list
-    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?", :red)
-    sleep(4)
     characters = Character.all
-    characters.each.with_index(1) do |character, i|
-    puts CLIColorize.colorize("#{i}. #{character.name}", :green)
+    Character.all.each.with_index(1) do |character, index|
+      puts CLIColorize.colorize("#{index}. #{character.name}", :green)
     end
   end
   
-  
+  def show_character(character)
+     puts "Name:  #{character.name}"
+     puts ""
+     puts "Episode Debut:  #{character.debut}"
+     puts ""
+     puts "Character Webpage:  #{character.profile_url}"
+     puts ""
+  end
   
   def make_characters
     characters_array = Scraper.scrape_index_page('index.html')

@@ -15,6 +15,10 @@ class Character
   def add_character_attributes(attributes_hash)
     attributes_hash.each {|k, v| self.send("#{k}=", v)}
   end
+  
+  def self.find(id)
+    self.all[id-1]
+  end
 
   def self.all
     @@all
