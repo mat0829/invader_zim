@@ -2,7 +2,7 @@
 
 require_relative "../lib/environment"
 
-InvaderZim::CLI.new.start
+InvaderZim::CLI.new.call
 
 
 

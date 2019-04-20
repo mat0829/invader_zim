@@ -1,32 +1,15 @@
 class InvaderZim::CLI 
   
   
-  def start
+  def call
     make_characters
     add_attributes_to_characters
     introduction
-    show_characters
   end
   
-  def show_characters
-    characters = Character.all
-    characters.each.with_index(1) do |character, i|
-    puts CLIColorize.colorize("#{i}. #{character.name}", :green)
-    end
+  def menu
+    show_characters_list
   end
-  
-  def make_characters
-    characters_array = Scraper.scrape_index_page('index.html')
-    Character.create_from_collection(characters_array)
-  end
-  
-  def add_attributes_to_characters
-    Character.all.each do |character|
-      attributes = Scraper.scrape_profile_page(character)
-      character.add_character_attributes(attributes)
-    end
-  end
-  
   
   def introduction
     CatpixMini::print_image "zim.gif",
@@ -44,16 +27,30 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red)
     puts ""
     sleep(4)
-    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?", :red)
-    sleep(4)
   end
   
-  #def menu
-  #  input = nil
-  #  while input != "exit"
-  #    puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit:"
-  #  input = gets.strip.downcase
-  #end
+  def show_characters_list
+    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?", :red)
+    sleep(4)
+    characters = Character.all
+    characters.each.with_index(1) do |character, i|
+    puts CLIColorize.colorize("#{i}. #{character.name}", :green)
+    end
+  end
+  
+  
+  
+  def make_characters
+    characters_array = Scraper.scrape_index_page('index.html')
+    Character.create_from_collection(characters_array)
+  end
+  
+  def add_attributes_to_characters
+    Character.all.each do |character|
+      attributes = Scraper.scrape_profile_page(character)
+      character.add_character_attributes(attributes)
+    end
+  end
   
 end
   
