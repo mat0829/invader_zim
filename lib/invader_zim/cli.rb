@@ -52,9 +52,9 @@ class InvaderZim::CLI
      puts CLIColorize.colorize("Would you like to know more even more!? Enter Y or N", :red).strip
      
      input = gets.strip.downcase
-     
+       puts ""
      if input == "y"
-       CatpixMini::print_image "gir.gif",
+       CatpixMini::print_image "girdisguise.gif",
        :limit_x => 1,
        :limit_y => 0,
        :center_x => false,
@@ -63,16 +63,19 @@ class InvaderZim::CLI
        :bg_fill => false,
        :resolution => "high"
        sleep(3)
-       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character? Enter Y or N", :yellow).strip
-      puts "Character Information: #{character.information}"
+       puts CLIColorize.colorize("Yay-I'm gonna' be sick!", :yellow).strip
+       sleep(3)
+       puts ""
+       puts "Character Information: #{character.information}"
+      
      elsif input == "n"
-      puts ""
-      puts "No! You lie! [makes wild scratching motions with his arms] YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
-      exit
+       puts ""
+       puts "No! You lie! [makes wild scratching motions with his arms] YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
+       exit
      else
-      puts ""
-      puts "Have you the brain worms!? Let me try this again."
-      menu
+       puts ""
+       puts "Have you the brain worms!? Let me try this again."
+       menu
      end
      
      
