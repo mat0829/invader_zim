@@ -40,7 +40,7 @@ require 'open-uri'
   # INSTEAD, LET'S DIRECTLY ADD NEW KEY/VALUE PAIRS TO OUR NICE NEW CHARACTER_PAGE_TRAITS HASH
 
      character_page_traits[:information] = table.css(".infobox tr td").text.strip.gsub(/[\n]/, '-')
-     #character_page_traits[:appearence] = table.css("p")[4].text.gsub(/[\"\n]/, '')
+     character_page_traits[:facts_of_doom] = table.css(".mw-content-text ul li")[0..28].text.strip.gsub(/[\"\n\t]/, '')
      #character_page_traits[:personality] = table.css("p")[6].text.gsub(/[\"\n]/, '') if table.css("p")[6]
 
 # LOOKS LIKE SOMETIMES THERE IS NO PERSONALITY p SO WE'LL CHECK TO SEE IF IT EXISTS - WE'LL ONLY ADD A :personality KEY IF THE p EXISTS ON THE WEB PAGE

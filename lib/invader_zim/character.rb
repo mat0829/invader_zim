@@ -1,5 +1,5 @@
 class Character
-  attr_accessor :name, :debut, :profile_url, :information
+  attr_accessor :name, :debut, :profile_url, :information, :facts_of_doom
   
   @@all = []
 
