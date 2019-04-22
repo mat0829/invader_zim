@@ -50,7 +50,9 @@ class InvaderZim::CLI
      puts "Episode Debut:  #{character.debut}"
      puts ""
      puts CLIColorize.colorize("Would you like to know more even more!? Enter Y or N", :red).strip
+     
      input = gets.strip.downcase
+     
      if input == "y"
        CatpixMini::print_image "gir.gif",
        :limit_x => 1,
