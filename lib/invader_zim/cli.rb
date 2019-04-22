@@ -33,7 +33,6 @@ class InvaderZim::CLI
     puts ""
     sleep(4)
     puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red)
-    puts ""
     sleep(4)
   end
   
@@ -45,6 +44,7 @@ class InvaderZim::CLI
   end
   
   def show_character(character)
+     puts ""
      puts "Name:  #{character.name}"
      puts ""
      puts "Episode Debut:  #{character.debut}"
