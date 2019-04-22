@@ -48,6 +48,8 @@ class InvaderZim::CLI
      puts "Name:  #{character.name}"
      puts ""
      puts "Episode Debut:  #{character.debut}"
+     puts ""
+     puts "Character Information: #{character.information}"
      
      puts CLIColorize.colorize("Would you like to gain more knowledges about a different character? Enter Y or N", :red).strip
      
