@@ -70,7 +70,7 @@ class InvaderZim::CLI
       
      elsif input == "n"
        puts ""
-       puts "No! You lie! [makes wild scratching motions with his arms] YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
+       puts "WHY!? WHY!? I LOVEDED YOU! I LOVEDED YOU!"
        exit
      else
        puts ""
