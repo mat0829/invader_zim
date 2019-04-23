@@ -21,11 +21,11 @@ class InvaderZim::CLI
     sleep(4)
     puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red)
     sleep(4)
+    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :red)
+    sleep(5)
   end
   
   def menu
-    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :red)
-    sleep(5)
     puts `clear`
     show_characters_list
     puts CLIColorize.colorize("Choose a character's number from the list and hit enter.", :red)
@@ -46,7 +46,7 @@ class InvaderZim::CLI
      puts "Character Information:  #{character.information}"
      sleep(7)
      puts ""
-     puts CLIColorize.colorize("Would you like to know more even more!? Enter Y or N", :red).strip
+     puts CLIColorize.colorize("Would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      
      input = gets.strip.downcase
        puts ""
@@ -59,36 +59,56 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       sleep(3)
        puts CLIColorize.colorize("Yay-I'm gonna' be sick!", :yellow).strip
-       sleep(3)
-       puts ""
+       sleep(5)
+       puts `clear`
        puts "Facts of Doom: #{character.facts_of_doom}"
        sleep(10)
        puts ""
-       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character? Enter Y or N", :red).strip
+       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character? Enter Y or N or Exit", :red).strip
      
-       input = gets.strip.downcase
-       if input == "y"
-        menu
-       elsif input == "n"
-        puts ""
-        CatpixMini::print_image "zim2.gif",
-        :limit_x => 1,
-        :limit_y => 0,
-        :center_x => false,
-        :center_y => false,
-        :bg => "white",
-        :bg_fill => false,
-        :resolution => "high"
-        puts "No! You lie! [makes wild scratching motions with his arms] YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
-        sleep(3)
-        exit
-       else
-        puts ""
-        puts "Have you the brain worms!? Let me try this again."
-        menu
-       end
+        input = gets.strip.downcase
+        if input == "y"
+          CatpixMini::print_image "gir_red.gif",
+          :limit_x => 1,
+          :limit_y => 0,
+          :center_x => false,
+          :center_y => false,
+          :bg => "white",
+          :bg_fill => false,
+          :resolution => "high"
+          puts CLIColorize.colorize("The knowledge, it fills me. It is neat.", :yellow).strip
+          sleep(5)
+          menu
+        elsif input == "n"
+          menu
+        elsif input == "exit"
+           puts `clear`
+          CatpixMini::print_image "zim2.gif",
+          :limit_x => 1,
+          :limit_y => 0,
+          :center_x => false,
+          :center_y => false,
+          :bg => "white",
+          :bg_fill => false,
+          :resolution => "high"
+          puts "No! You lie! [makes wild scratching motions with his arms] YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
+          sleep(5)
+          exit
+        else
+          puts `clear`
+          CatpixMini::print_image "gir_transformation.gif",
+          :limit_x => 1,
+          :limit_y => 0,
+          :center_x => false,
+          :center_y => false,
+          :bg => "white",
+          :bg_fill => false,
+          :resolution => "high"
+          puts CLIColorize.colorize("Leprechauns!", :yellow).strip
+          sleep(5)
+          menu
+        end
        
      elsif input == "n"
        puts ""
@@ -101,7 +121,8 @@ class InvaderZim::CLI
        :bg_fill => false,
        :resolution => "high"
        puts "Children, your performance was miserable! Your parents will all receive phone calls instructing them to love you less now."
-       sleep(4)
+       sleep(5)
+       puts `clear`
        menu
      else
        puts ""
