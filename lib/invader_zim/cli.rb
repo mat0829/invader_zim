@@ -35,13 +35,6 @@ class InvaderZim::CLI
     show_character(character)
   end
   
-  def show_characters_list
-    characters = Character.all
-    Character.all.each.with_index(1) do |character, index|
-      puts CLIColorize.colorize("#{index}. #{character.name}", :green)
-    end
-  end
-  
   def show_character(character)
      puts `clear`
      puts "Name:  #{character.name}"
@@ -126,6 +119,13 @@ class InvaderZim::CLI
       attributes = Scraper.scrape_profile_page(character)
       character.add_character_attributes(attributes)
     #end
+  end
+  
+  def show_characters_list
+    characters = Character.all
+    Character.all.each.with_index(1) do |character, index|
+      puts CLIColorize.colorize("#{index}. #{character.name}", :green)
+    end
   end
   
 end
