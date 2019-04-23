@@ -17,11 +17,18 @@ class InvaderZim::CLI
     :bg_fill => false,
     :resolution => "high"
     sleep(3)
-    puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :red).strip
+    puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :green).strip
+    puts ""
     sleep(4)
-    puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :red)
+    puts CLIColorize.colorize("Type in your name human so I can check your worthiness." , :green).strip
+    puts ""
+    input = gets.strip
+    person = Human.new(input)
+    puts CLIColorize.colorize("Congratulations #{person.name}. I have checked your AMAZINGNESS and found you to be at a suitable level to be friends with ZIM!", :green)
+    
+    puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :green)
     sleep(4)
-    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :red)
+    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
     sleep(5)
   end
   
@@ -147,7 +154,7 @@ class InvaderZim::CLI
   def show_characters_list
     characters = Character.all
     Character.all.each.with_index(1) do |character, index|
-      puts CLIColorize.colorize("#{index}. #{character.name}", :green)
+      puts CLIColorize.colorize("#{index}. #{character.name}", :red)
     end
   end
   
