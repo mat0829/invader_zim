@@ -2,6 +2,7 @@ class InvaderZim::CLI
   
   
   def call
+    puts `clear`
     make_characters
     introduction
     menu
@@ -23,10 +24,10 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("Type in your name human so I can check your worthiness." , :green).strip
     puts ""
     input = gets.strip
-    person = Human.new(input)
-    puts CLIColorize.colorize("Congratulations #{person.name}. I have checked your AMAZINGNESS and found you to be at a suitable level to be friends with ZIM!", :green)
-    
-    puts CLIColorize.colorize("If you are here then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :green)
+    $human = Human.new(input)
+    puts CLIColorize.colorize("Congratulations #{$human.name}. I have checked your AMAZINGNESS and found you to be at a suitable level to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
+    sleep(5)
+    puts CLIColorize.colorize("If you are here #{$human.name} then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :green)
     sleep(4)
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
     sleep(5)
@@ -35,7 +36,8 @@ class InvaderZim::CLI
   def menu
     puts `clear`
     show_characters_list
-    puts CLIColorize.colorize("Choose a character's number from the list and hit enter.", :red)
+    puts ""
+    puts CLIColorize.colorize("#{$human.name}, choose a character's number from the list and hit enter.", :blue)
     input = gets.strip
     character = Character.find(input.to_i)
     add_attributes_to_characters(character)
@@ -72,7 +74,7 @@ class InvaderZim::CLI
        puts "Facts of Doom: #{character.facts_of_doom}"
        sleep(10)
        puts ""
-       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character? Enter Y or N or Exit", :red).strip
+       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{$human.name}? Enter Y or N or Exit", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
