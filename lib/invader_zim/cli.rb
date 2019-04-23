@@ -24,7 +24,7 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("Type in your name so I can check if you are WORTHY of being friends with ZIM." , :green).strip
     puts ""
     input = gets.strip
-    $human = Human.new(input)
+    @@human = Human.new(input)
     puts ""
     puts CLIColorize.colorize("*Zim types in your name on the keyboard and mutters to himself*", :white).strip
     puts ""
@@ -32,12 +32,11 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("*His computer makes all sorts of noises before making a ding!*", :white).strip
     puts ""
     sleep(5)
-    puts CLIColorize.colorize("Congratulations #{$human.name}. I have checked your AMAZINGNESS and found you to be at a WORTHY, SO VERY WORTHY, to be friends with ZIM!", :green)
+    puts CLIColorize.colorize("Congratulations #{@@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
      puts ""
-     puts CLIColorize.colorize("Praise you! PRAISE YOU!!!", :green)
     sleep(8)
     puts ""
-    puts CLIColorize.colorize("If you are here #{$human.name} then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :green)
+    puts CLIColorize.colorize("If you are here #{@@human.name} then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :green)
      puts ""
     sleep(7)
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
@@ -49,7 +48,7 @@ class InvaderZim::CLI
     puts `clear`
     show_characters_list
     puts ""
-    puts CLIColorize.colorize("#{$human.name}, choose a character's number from the list and hit enter.", :blue)
+    puts CLIColorize.colorize("#{@@human.name}, choose a character's number from the list and hit enter.", :blue)
     input = gets.strip
     character = Character.find(input.to_i)
     add_attributes_to_characters(character)
@@ -86,7 +85,7 @@ class InvaderZim::CLI
        puts "Facts of Doom: #{character.facts_of_doom}"
        sleep(10)
        puts ""
-       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{$human.name}? Enter Y or N or Exit", :red).strip
+       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{@@human.name}? Enter Y or N or Exit", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
@@ -113,7 +112,9 @@ class InvaderZim::CLI
           :bg => "white",
           :bg_fill => false,
           :resolution => "high"
-          puts "No! You lie! [makes wild scratching motions with his arms] YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
+          puts "No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
+          puts ""
+          puts "*makes wild scratching motions with his arms*"
           sleep(5)
           exit
         else
