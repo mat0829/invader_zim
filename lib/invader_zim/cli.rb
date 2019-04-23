@@ -21,16 +21,28 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :green).strip
     puts ""
     sleep(4)
-    puts CLIColorize.colorize("Type in your name human so I can check your worthiness." , :green).strip
+    puts CLIColorize.colorize("Type in your name so I can check if you are WORTHY of being friends with ZIM." , :green).strip
     puts ""
     input = gets.strip
     $human = Human.new(input)
-    puts CLIColorize.colorize("Congratulations #{$human.name}. I have checked your AMAZINGNESS and found you to be at a suitable level to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
+    puts ""
+    puts CLIColorize.colorize("*Zim types in your name on the keyboard and mutters to himself*", :white).strip
+    puts ""
     sleep(5)
+    puts CLIColorize.colorize("*His computer makes all sorts of noises before making a ding!*", :white).strip
+    puts ""
+    sleep(5)
+    puts CLIColorize.colorize("Congratulations #{$human.name}. I have checked your AMAZINGNESS and found you to be at a WORTHY, SO VERY WORTHY, to be friends with ZIM!", :green)
+     puts ""
+     puts CLIColorize.colorize("Praise you! PRAISE YOU!!!", :green)
+    sleep(8)
+    puts ""
     puts CLIColorize.colorize("If you are here #{$human.name} then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :green)
-    sleep(4)
+     puts ""
+    sleep(7)
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
-    sleep(5)
+     puts ""
+    sleep(7)
   end
   
   def menu
