@@ -17,53 +17,53 @@ class InvaderZim::CLI
     :bg => "white",
     :bg_fill => false,
     :resolution => "high"
-    sleep(3)
+    #sleep(3)
     
     puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :green).strip
     puts ""
-    sleep(4)
+    #sleep(4)
     
     puts CLIColorize.colorize("Type in your name so I can check if you are WORTHY of being friends with ZIM." , :green).strip
     puts ""
     input = gets.strip
     @@human = Human.new(input)
     puts ""
-    sleep (2)
+    #sleep (2)
     puts CLIColorize.colorize("Computer, give me all the information you have on #{@@human.name}.", :green).strip
     puts ""
-    sleep(4)
+    #sleep(4)
     
     puts CLIColorize.colorize("#{@@human.name} is a disgruntled human.", :white).strip
     puts ""
-    sleep(4)
+    #sleep(4)
     
     puts CLIColorize.colorize("Continue.", :green).strip
     puts ""
-    sleep(4)
+    #sleep(4)
     
     puts CLIColorize.colorize("Insufficient data.", :white).strip
     puts ""
-    sleep(4)
+    #sleep(4)
     
     puts CLIColorize.colorize("Insufficient data? Can't you just make an educated guess?", :green).strip
     puts ""
-    sleep(4)
+    #sleep(4)
     
     puts CLIColorize.colorize("O... kay... Um, #{@@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?", :white).strip
     puts ""
-    sleep(6)
+    #sleep(4)
     
     puts CLIColorize.colorize("I KNEW IT!", :green).strip
     puts ""
-    sleep(4)
+    #sleep(4)
     
     puts CLIColorize.colorize("Congratulations #{@@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
     puts ""
-    sleep(8)
+    #sleep(8)
     
     puts CLIColorize.colorize("Follow us to the secret lair #{@@human.name}.", :green)
     puts ""
-    sleep(7)
+    #sleep(7)
     puts `clear`
     CatpixMini::print_image "zim_and_gir.gif",
     :limit_x => 1,
@@ -75,20 +75,21 @@ class InvaderZim::CLI
     :resolution => "high"
     puts CLIColorize.colorize("*You stand on the platform and start descending*" , :white)
     puts ""
-    sleep(8)
+    #sleep(8)
     
     puts `clear`
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
     puts ""
-    sleep(5)
+    #sleep(5)
   end
   
   def menu
     puts `clear`
     show_characters_list
     puts CLIColorize.colorize("#{@@human.name}, choose a character's number from the list and hit enter.", :blue)
-    input = gets.strip
-    if input == (1..14)
+    input = gets.strip.to_i
+    
+    if input.between?(1,14)
       character = Character.find(input.to_i)
       add_attributes_to_characters(character)
       show_character(character)
@@ -130,7 +131,7 @@ class InvaderZim::CLI
          sleep(8)
        else
          puts "Facts of Doom: #{character.facts_of_doom}"
-         sleep(20)
+         sleep(10)
        end
        
        puts ""
