@@ -9,7 +9,7 @@ class InvaderZim::CLI
   end
   
   def introduction
-    CatpixMini::print_image "zim.gif",
+    CatpixMini::print_image "girgood.gif",
     :limit_x => 1,
     :limit_y => 0,
     :center_x => false,
@@ -18,36 +18,74 @@ class InvaderZim::CLI
     :bg_fill => false,
     :resolution => "high"
     sleep(3)
+    
     puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :green).strip
     puts ""
     sleep(4)
+    
     puts CLIColorize.colorize("Type in your name so I can check if you are WORTHY of being friends with ZIM." , :green).strip
     puts ""
     input = gets.strip
     @@human = Human.new(input)
     puts ""
-    puts CLIColorize.colorize("*Zim types in your name on the keyboard and mutters to himself*", :white).strip
+    sleep (3)
+    puts CLIColorize.colorize("Computer, give me all the information you have on #{@@human.name}.", :green).strip
     puts ""
-    sleep(5)
-    puts CLIColorize.colorize("*His computer makes all sorts of noises before making a ding!*", :white).strip
+    sleep(4)
+    
+    puts CLIColorize.colorize("#{@@human.name} is a disgruntled human.", :white).strip
     puts ""
-    sleep(5)
+    sleep(4)
+    
+    puts CLIColorize.colorize("Continue.", :green).strip
+    puts ""
+    sleep(4)
+    
+    puts CLIColorize.colorize("Insufficient data.", :white).strip
+    puts ""
+    sleep(4)
+    
+    puts CLIColorize.colorize("Insufficient data? Can't you just make an educated guess?", :green).strip
+    puts ""
+    sleep(4)
+    
+    puts CLIColorize.colorize("O... kay... Um, #{@@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?", :white).strip
+    puts ""
+    sleep(6)
+    
+    puts CLIColorize.colorize("I KNEW IT!", :green).strip
+    puts ""
+    sleep(4)
+    
     puts CLIColorize.colorize("Congratulations #{@@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
-     puts ""
-    sleep(8)
     puts ""
-    puts CLIColorize.colorize("If you are here #{@@human.name} then no doubt you know of my AMAZINGNESS and wish to learn more from me, ZIM!", :green)
-     puts ""
+    sleep(8)
+    
+    puts CLIColorize.colorize("Follow us to the secret lair #{@@human.name}.", :green)
+    puts ""
     sleep(7)
+    puts `clear`
+    CatpixMini::print_image "zim_and_gir.gif",
+    :limit_x => 1,
+    :limit_y => 0,
+    :center_x => false,
+    :center_y => false,
+    :bg => "white",
+    :bg_fill => false,
+    :resolution => "high"
+    puts CLIColorize.colorize("*You stand on the platform and start descending*" , :white)
+    puts ""
+    sleep(8)
+    
+    puts `clear`
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
-     puts ""
-    sleep(7)
+    puts ""
+    sleep(5)
   end
   
   def menu
     puts `clear`
     show_characters_list
-    puts ""
     puts CLIColorize.colorize("#{@@human.name}, choose a character's number from the list and hit enter.", :blue)
     input = gets.strip
     character = Character.find(input.to_i)
@@ -142,7 +180,7 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       puts "Children, your performance was miserable! Your parents will all receive phone calls instructing them to love you less now."
+       puts "#{@@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less now."
        sleep(5)
        puts `clear`
        menu
