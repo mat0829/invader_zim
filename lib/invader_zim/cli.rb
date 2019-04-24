@@ -2,7 +2,7 @@ class InvaderZim::CLI
   
   
   def call
-    puts `clear`
+    system "clear"
     make_characters
     introduction
     menu
@@ -59,12 +59,12 @@ class InvaderZim::CLI
     
     puts CLIColorize.colorize("Congratulations #{@@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
     puts ""
-    #sleep(8)
+    #sleep(5)
     
     puts CLIColorize.colorize("Follow us to the secret lair #{@@human.name}.", :green)
     puts ""
-    #sleep(7)
-    puts `clear`
+    #sleep(5)
+    system "clear"
     CatpixMini::print_image "zim_and_gir.gif",
     :limit_x => 1,
     :limit_y => 0,
@@ -77,14 +77,14 @@ class InvaderZim::CLI
     puts ""
     #sleep(8)
     
-    puts `clear`
+    system "clear"
     puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
     puts ""
-    #sleep(5)
+    #sleep(4)
   end
   
   def menu
-    puts `clear`
+    system "clear"
     show_characters_list
     puts CLIColorize.colorize("#{@@human.name}, choose a character's number from the list and hit enter.", :blue)
     input = gets.strip.to_i
@@ -94,6 +94,7 @@ class InvaderZim::CLI
       add_attributes_to_characters(character)
       show_character(character)
     else 
+      system "clear"
       CatpixMini::print_image "almighty_tallest.gif",
       :limit_x => 1,
       :limit_y => 0,
@@ -123,7 +124,7 @@ class InvaderZim::CLI
   
   
   def show_character(character)
-     puts `clear`
+     system "clear"
      puts "Name:  #{character.name}"
      puts ""
      puts "Episode Debut:  #{character.debut}"
@@ -136,6 +137,7 @@ class InvaderZim::CLI
      input = gets.strip.downcase
        puts ""
      if input == "y"
+       system "clear"
        CatpixMini::print_image "girdisguise.gif",
        :limit_x => 1,
        :limit_y => 0,
@@ -146,7 +148,7 @@ class InvaderZim::CLI
        :resolution => "high"
        puts CLIColorize.colorize("Yay-I'm gonna' be sick!", :yellow).strip
        sleep(5)
-       puts `clear`
+       system "clear"
        if character.facts_of_doom == ""
          puts "Sorry #{@@human.name}, this character has no Facts of Doom."
          sleep(8)
@@ -160,6 +162,7 @@ class InvaderZim::CLI
      
         input = gets.strip.downcase
         if input == "y"
+          system "clear"
           CatpixMini::print_image "gir_red.gif",
           :limit_x => 1,
           :limit_y => 0,
@@ -172,7 +175,7 @@ class InvaderZim::CLI
           sleep(5)
           menu
         elsif input == "n"
-           puts `clear`
+           system "clear"
           CatpixMini::print_image "zim2.gif",
           :limit_x => 1,
           :limit_y => 0,
@@ -187,7 +190,7 @@ class InvaderZim::CLI
           sleep(5)
           exit
         else
-          puts `clear`
+          system "clear"
           CatpixMini::print_image "gir_transformation.gif",
           :limit_x => 1,
           :limit_y => 0,
@@ -202,7 +205,7 @@ class InvaderZim::CLI
         end
        
      elsif input == "n"
-       puts ""
+       system "clear"
        CatpixMini::print_image "ms_bitters.gif",
        :limit_x => 1,
        :limit_y => 0,
@@ -213,10 +216,9 @@ class InvaderZim::CLI
        :resolution => "high"
        puts "#{@@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less now."
        sleep(5)
-       puts `clear`
        menu
      else
-       puts ""
+       system "clear"
        CatpixMini::print_image "mini_moose.gif",
        :limit_x => 1,
        :limit_y => 0,
