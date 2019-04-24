@@ -88,9 +88,14 @@ class InvaderZim::CLI
     show_characters_list
     puts CLIColorize.colorize("#{@@human.name}, choose a character's number from the list and hit enter.", :blue)
     input = gets.strip
-    character = Character.find(input.to_i)
-    add_attributes_to_characters(character)
-    show_character(character)
+    if input == (1..14)
+      character = Character.find(input.to_i)
+      add_attributes_to_characters(character)
+      show_character(character)
+    else 
+      puts "Nope - Temporary holder"
+      puts ""
+    end
   end
   
   
