@@ -94,8 +94,29 @@ class InvaderZim::CLI
       add_attributes_to_characters(character)
       show_character(character)
     else 
-      puts "Nope - Temporary holder"
+      CatpixMini::print_image "almighty_tallest.gif",
+      :limit_x => 1,
+      :limit_y => 0,
+      :center_x => false,
+      :center_y => false,
+      :bg => "white",
+      :bg_fill => false,
+      :resolution => "high"
       puts ""
+      sleep(5)
+      puts CLIColorize.colorize("Almighty Tallest Purple: 'What are you doing?'" , :magenta)
+      puts ""
+      sleep(4)
+      puts CLIColorize.colorize("Almighty Tallest Red: 'Im running a diagnostic to find the problem! YOU! Save the doughnuts!" , :red)
+      puts ""
+      sleep(4)
+      puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@@human.name} put in something other then 1 to 14.'" , :red)
+      puts ""
+      sleep(4)
+      puts CLIColorize.colorize("Tallest Purple: '#{@@human.name}, You should have tried harder!'" , :magenta)
+      puts ""
+      sleep(4)
+      menu
     end
   end
   
