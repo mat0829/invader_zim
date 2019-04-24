@@ -120,8 +120,14 @@ class InvaderZim::CLI
        puts CLIColorize.colorize("Yay-I'm gonna' be sick!", :yellow).strip
        sleep(5)
        puts `clear`
-       puts "Facts of Doom: #{character.facts_of_doom}"
-       sleep(20)
+       if character.facts_of_doom == ""
+         puts "Sorry #{@@human.name}, this character has no Facts of Doom."
+         sleep(8)
+       else
+         puts "Facts of Doom: #{character.facts_of_doom}"
+         sleep(20)
+       end
+       
        puts ""
        puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{@@human.name}? Enter Y or N", :red).strip
      
