@@ -121,9 +121,9 @@ class InvaderZim::CLI
        sleep(5)
        puts `clear`
        puts "Facts of Doom: #{character.facts_of_doom}"
-       sleep(10)
+       sleep(20)
        puts ""
-       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{@@human.name}? Enter Y or N or Exit", :red).strip
+       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{@@human.name}? Enter Y or N", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
@@ -139,8 +139,6 @@ class InvaderZim::CLI
           sleep(5)
           menu
         elsif input == "n"
-          menu
-        elsif input == "exit"
            puts `clear`
           CatpixMini::print_image "zim2.gif",
           :limit_x => 1,
