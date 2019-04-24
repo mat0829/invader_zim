@@ -9,7 +9,7 @@ class InvaderZim::CLI
   end
   
   def introduction
-    CatpixMini::print_image "girgood.gif",
+    CatpixMini::print_image "zim.gif",
     :limit_x => 1,
     :limit_y => 0,
     :center_x => false,
@@ -28,7 +28,7 @@ class InvaderZim::CLI
     input = gets.strip
     @@human = Human.new(input)
     puts ""
-    sleep (3)
+    sleep (2)
     puts CLIColorize.colorize("Computer, give me all the information you have on #{@@human.name}.", :green).strip
     puts ""
     sleep(4)
@@ -186,7 +186,14 @@ class InvaderZim::CLI
        menu
      else
        puts ""
-       puts "Have you the brain worms!? Let me try this again."
+       CatpixMini::print_image "mini_moose.gif",
+       :limit_x => 1,
+       :limit_y => 0,
+       :center_x => false,
+       :center_y => false,
+       :bg => "white",
+       :bg_fill => false,
+       :resolution => "high"
        menu
      end
   
