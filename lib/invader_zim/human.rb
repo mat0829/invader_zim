@@ -1,4 +1,4 @@
-class Human
+class InvaderZim::Human
   attr_accessor :name 
   
   def initialize(name)

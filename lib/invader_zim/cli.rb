@@ -25,7 +25,7 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("Type in your name so I can check if you are WORTHY of being friends with ZIM." , :green).strip
     puts ""
     input = gets.strip
-    @human = Human.new(input)
+    @human = InvaderZim::Human.new(input)
     puts ""
     sleep (1)
     puts CLIColorize.colorize("Computer, give me all the information you have on #{@human.name}.", :green).strip
@@ -90,7 +90,7 @@ class InvaderZim::CLI
     input = gets.strip.to_i
     
     if input.between?(1,14)
-      character = Character.find(input.to_i)
+      character = InvaderZim::Character.find(input.to_i)
       add_attributes_to_characters(character)
       show_character(character)
     else 
@@ -246,20 +246,20 @@ class InvaderZim::CLI
   end
   
   def make_characters
-    characters_array = Scraper.scrape_index_page('index.html')
-    Character.create_from_collection(characters_array)
+    characters_array = InvaderZim::Scraper.scrape_index_page('index.html')
+    InvaderZim::Character.create_from_collection(characters_array)
   end
   
   def add_attributes_to_characters(character)
     #Character.all.each do |character|
-      attributes = Scraper.scrape_profile_page(character)
+      attributes = InvaderZim::Scraper.scrape_profile_page(character)
       character.add_character_attributes(attributes)
     #end
   end
   
   def show_characters_list
-    characters = Character.all
-    Character.all.each.with_index(1) do |character, index|
+    characters = InvaderZim::Character.all
+    InvaderZim::Character.all.each.with_index(1) do |character, index|
       puts CLIColorize.colorize("#{index}. #{character.name}", :cyan)
     end
   end

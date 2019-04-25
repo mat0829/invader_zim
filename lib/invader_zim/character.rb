@@ -1,4 +1,4 @@
-class Character
+class InvaderZim::Character
   attr_accessor :name, :debut, :profile_url, :information, :facts_of_doom
   
   @@all = []
@@ -9,7 +9,7 @@ class Character
   end
 
   def self.create_from_collection(characters_array)
-    characters_array.each {|character| Character.new(character)}
+    characters_array.each {|character| InvaderZim::Character.new(character)}
   end
 
   def add_character_attributes(attributes_hash)
