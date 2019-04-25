@@ -26,14 +26,14 @@ class InvaderZim::CLI
     puts CLIColorize.colorize("Type in your name so I can check if you are WORTHY of being friends with ZIM." , :green).strip
     puts ""
     input = gets.strip
-    @@human = Human.new(input)
+    @human = Human.new(input)
     puts ""
     #sleep (2)
-    puts CLIColorize.colorize("Computer, give me all the information you have on #{@@human.name}.", :green).strip
+    puts CLIColorize.colorize("Computer, give me all the information you have on #{@human.name}.", :green).strip
     puts ""
     #sleep(4)
     
-    puts CLIColorize.colorize("#{@@human.name} is a disgruntled human.", :white).strip
+    puts CLIColorize.colorize("#{@human.name} is a disgruntled human.", :white).strip
     puts ""
     #sleep(4)
     
@@ -49,7 +49,7 @@ class InvaderZim::CLI
     puts ""
     #sleep(4)
     
-    puts CLIColorize.colorize("O... kay... Um, #{@@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?", :white).strip
+    puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?", :white).strip
     puts ""
     #sleep(4)
     
@@ -57,11 +57,11 @@ class InvaderZim::CLI
     puts ""
     #sleep(4)
     
-    puts CLIColorize.colorize("Congratulations #{@@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
+    puts CLIColorize.colorize("Congratulations #{@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
     puts ""
     #sleep(5)
     
-    puts CLIColorize.colorize("Follow us to the secret lair #{@@human.name}.", :green)
+    puts CLIColorize.colorize("Follow us to the secret lair #{@human.name}.", :green)
     puts ""
     #sleep(5)
     system "clear"
@@ -86,7 +86,7 @@ class InvaderZim::CLI
   def menu
     system "clear"
     show_characters_list
-    puts CLIColorize.colorize("#{@@human.name}, choose a character's number from the list and hit enter.", :blue)
+    puts CLIColorize.colorize("#{@human.name}, choose a character's number from the list and hit enter.", :blue)
     input = gets.strip.to_i
     
     if input.between?(1,14)
@@ -111,10 +111,10 @@ class InvaderZim::CLI
       puts CLIColorize.colorize("Almighty Tallest Red: 'Im running a diagnostic to find the problem! YOU! Save the doughnuts!" , :red)
       puts ""
       sleep(4)
-      puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@@human.name} put in something other then 1 to 14.'" , :red)
+      puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@human.name} put in something other then 1 to 14.'" , :red)
       puts ""
       sleep(4)
-      puts CLIColorize.colorize("Tallest Purple: '#{@@human.name}, You should have tried harder!'" , :magenta)
+      puts CLIColorize.colorize("Tallest Purple: '#{@human.name}, You should have tried harder!'" , :magenta)
       puts ""
       sleep(4)
       menu
@@ -150,7 +150,7 @@ class InvaderZim::CLI
        sleep(5)
        system "clear"
        if character.facts_of_doom == ""
-         puts "Sorry #{@@human.name}, this character has no Facts of Doom."
+         puts "Sorry #{@human.name}, this character has no Facts of Doom."
          sleep(8)
        else
          puts "Facts of Doom: #{character.facts_of_doom}"
@@ -158,7 +158,7 @@ class InvaderZim::CLI
        end
        
        puts ""
-       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{@@human.name}? Enter Y or N", :red).strip
+       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{@human.name}? Enter Y or N", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
@@ -214,7 +214,7 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       puts "#{@@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less now."
+       puts "#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less now."
        sleep(5)
        menu
      else
