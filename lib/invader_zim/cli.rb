@@ -132,7 +132,7 @@ class InvaderZim::CLI
      puts "Character Information:  #{character.information}"
      sleep(7)
      puts ""
-     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
+     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N'", :white).strip
      
      input = gets.strip.downcase
        puts ""
