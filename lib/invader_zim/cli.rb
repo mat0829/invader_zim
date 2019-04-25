@@ -33,7 +33,7 @@ class InvaderZim::CLI
     puts ""
     #sleep(4)
     
-    puts CLIColorize.colorize("#{@human.name} is a disgruntled human.", :white).strip
+    puts CLIColorize.colorize("#{@human.name} is a disgruntled human.", :red).strip
     puts ""
     #sleep(4)
     
@@ -41,7 +41,7 @@ class InvaderZim::CLI
     puts ""
     #sleep(4)
     
-    puts CLIColorize.colorize("Insufficient data.", :white).strip
+    puts CLIColorize.colorize("Insufficient data.", :red).strip
     puts ""
     #sleep(4)
     
@@ -49,7 +49,7 @@ class InvaderZim::CLI
     puts ""
     #sleep(4)
     
-    puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?", :white).strip
+    puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?", :red).strip
     puts ""
     #sleep(4)
     
@@ -86,7 +86,8 @@ class InvaderZim::CLI
   def menu
     system "clear"
     show_characters_list
-    puts CLIColorize.colorize("#{@human.name}, choose a character's number from the list and hit enter.", :blue)
+    puts ""
+    puts CLIColorize.colorize("#{@human.name}, choose a character's number from the list and hit enter.", :red)
     input = gets.strip.to_i
     
     if input.between?(1,14)
@@ -125,14 +126,14 @@ class InvaderZim::CLI
   
   def show_character(character)
      system "clear"
-     puts "Name:  #{character.name}"
+     puts CLIColorize.colorize("Name:  #{character.name}", :cyan).strip
      puts ""
-     puts "Episode Debut:  #{character.debut}"
+     puts CLIColorize.colorize("Episode Debut:  #{character.debut}", :cyan).strip
      puts ""
-     puts "Character Information:  #{character.information}"
+     puts CLIColorize.colorize("Character Information:  #{character.information}", :cyan).strip
      sleep(7)
      puts ""
-     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N'", :white).strip
+     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N'", :red).strip
      
      input = gets.strip.downcase
        puts ""
@@ -146,14 +147,14 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       puts CLIColorize.colorize("Yay-I'm gonna' be sick!", :yellow).strip
+       puts CLIColorize.colorize("Yay!!!! I like Doom!!!", :yellow).strip
        sleep(5)
        system "clear"
        if character.facts_of_doom == ""
-         puts "Sorry #{@human.name}, this character has no Facts of Doom."
+         puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
          sleep(8)
        else
-         puts "Facts of Doom: #{character.facts_of_doom}"
+         puts CLIColorize.colorize("Facts of Doom: #{character.facts_of_doom}", :cyan).strip
          sleep(10)
        end
        
@@ -171,6 +172,7 @@ class InvaderZim::CLI
           :bg => "white",
           :bg_fill => false,
           :resolution => "high"
+          puts ""
           puts CLIColorize.colorize("The knowledge, it fills me. It is neat.", :yellow).strip
           sleep(5)
           menu
@@ -184,7 +186,7 @@ class InvaderZim::CLI
           :bg => "white",
           :bg_fill => false,
           :resolution => "high"
-          puts "No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!"
+          puts CLIColorize.colorize("No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!", :green).strip
           puts ""
           puts "*makes wild scratching motions with his arms*"
           sleep(5)
@@ -199,6 +201,7 @@ class InvaderZim::CLI
           :bg => "white",
           :bg_fill => false,
           :resolution => "high"
+          sleep(5)
           puts CLIColorize.colorize("Leprechauns!", :yellow).strip
           sleep(5)
           menu
@@ -214,7 +217,8 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       puts "#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less."
+       puts ""
+       puts CLIColorize.colorize("#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
        sleep(5)
        menu
      else
@@ -227,6 +231,8 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
+       puts CLIColorize.colorize("You have entered an incorrect key. Minimoose judges you. The Shame....", :white).strip
+       sleep(6)
        menu
      end
   
@@ -247,7 +253,7 @@ class InvaderZim::CLI
   def show_characters_list
     characters = Character.all
     Character.all.each.with_index(1) do |character, index|
-      puts CLIColorize.colorize("#{index}. #{character.name}", :red)
+      puts CLIColorize.colorize("#{index}. #{character.name}", :cyan)
     end
   end
   
