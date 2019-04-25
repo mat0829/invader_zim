@@ -78,7 +78,7 @@ class InvaderZim::CLI
     #sleep(8)
     
     system "clear"
-    puts CLIColorize.colorize("Would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
+    puts CLIColorize.colorize("#{@human.name}, would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
     puts ""
     #sleep(4)
   end
@@ -132,7 +132,7 @@ class InvaderZim::CLI
      puts "Character Information:  #{character.information}"
      sleep(7)
      puts ""
-     puts CLIColorize.colorize("Would you like to know some Facts of Doom!? Enter Y or N", :red).strip
+     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      
      input = gets.strip.downcase
        puts ""
@@ -158,7 +158,7 @@ class InvaderZim::CLI
        end
        
        puts ""
-       puts CLIColorize.colorize("Would you like to gain more knowledges about a different character #{@human.name}? Enter Y or N", :red).strip
+       puts CLIColorize.colorize("#{@human.name}, would you like to gain more knowledges about a different character? Enter Y or N", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
@@ -214,7 +214,7 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       puts "#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less now."
+       puts "#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less."
        sleep(5)
        menu
      else
