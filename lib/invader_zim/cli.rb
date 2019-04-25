@@ -147,7 +147,7 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       puts CLIColorize.colorize("Yay!!!! I like Doom!!!", :yellow).strip
+       puts CLIColorize.colorize("Yay! I'm gonna' be sick!", :yellow).strip
        sleep(5)
        system "clear"
        if character.facts_of_doom == ""
