@@ -17,53 +17,52 @@ class InvaderZim::CLI
     :bg => "white",
     :bg_fill => false,
     :resolution => "high"
-    #sleep(3)
-    
-    puts CLIColorize.colorize("Welcome human! It is I, ZIM!", :green).strip
+    sleep(2)
+    puts CLIColorize.colorize("Greetings human! It is I, ZIM!", :green).strip
     puts ""
-    #sleep(4)
+    sleep(3)
     
     puts CLIColorize.colorize("Type in your name so I can check if you are WORTHY of being friends with ZIM." , :green).strip
     puts ""
     input = gets.strip
     @human = Human.new(input)
     puts ""
-    #sleep (2)
+    sleep (1)
     puts CLIColorize.colorize("Computer, give me all the information you have on #{@human.name}.", :green).strip
     puts ""
-    #sleep(4)
+    sleep(3)
     
     puts CLIColorize.colorize("#{@human.name} is a disgruntled human.", :red).strip
     puts ""
-    #sleep(4)
+    sleep(3)
     
     puts CLIColorize.colorize("Continue.", :green).strip
     puts ""
-    #sleep(4)
+    sleep(3)
     
     puts CLIColorize.colorize("Insufficient data.", :red).strip
     puts ""
-    #sleep(4)
+    sleep(3)
     
     puts CLIColorize.colorize("Insufficient data? Can't you just make an educated guess?", :green).strip
     puts ""
-    #sleep(4)
+    sleep(3)
     
     puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?", :red).strip
     puts ""
-    #sleep(4)
+    sleep(5)
     
     puts CLIColorize.colorize("I KNEW IT!", :green).strip
     puts ""
-    #sleep(4)
+    sleep(3)
     
     puts CLIColorize.colorize("Congratulations #{@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!", :green)
     puts ""
-    #sleep(5)
+    sleep(5)
     
     puts CLIColorize.colorize("Follow us to the secret lair #{@human.name}.", :green)
     puts ""
-    #sleep(5)
+    sleep(4)
     system "clear"
     CatpixMini::print_image "zim_and_gir.gif",
     :limit_x => 1,
@@ -75,12 +74,12 @@ class InvaderZim::CLI
     :resolution => "high"
     puts CLIColorize.colorize("*You stand on the platform and start descending*" , :white)
     puts ""
-    #sleep(8)
+    sleep(8)
     
     system "clear"
     puts CLIColorize.colorize("#{@human.name}, would you like to learn more about the amazingness that is me, ZIM, or another, far less superior character?" , :green)
     puts ""
-    #sleep(4)
+    sleep(5)
   end
   
   def menu
@@ -104,12 +103,11 @@ class InvaderZim::CLI
       :bg => "white",
       :bg_fill => false,
       :resolution => "high"
-      puts ""
-      sleep(5)
+      sleep(3)
       puts CLIColorize.colorize("Almighty Tallest Purple: 'What are you doing?'" , :magenta)
       puts ""
       sleep(4)
-      puts CLIColorize.colorize("Almighty Tallest Red: 'Im running a diagnostic to find the problem! YOU! Save the doughnuts!" , :red)
+      puts CLIColorize.colorize("Almighty Tallest Red: 'I am running a diagnostic to find the problem! YOU! Save the doughnuts!'" , :red)
       puts ""
       sleep(4)
       puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@human.name} put in something other then 1 to 14.'" , :red)
@@ -131,9 +129,9 @@ class InvaderZim::CLI
      puts CLIColorize.colorize("Episode Debut:  #{character.debut}", :cyan).strip
      puts ""
      puts CLIColorize.colorize("Character Information:  #{character.information}", :cyan).strip
-     sleep(7)
+     sleep(5)
      puts ""
-     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N'", :red).strip
+     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      
      input = gets.strip.downcase
        puts ""
@@ -147,14 +145,23 @@ class InvaderZim::CLI
        :bg => "white",
        :bg_fill => false,
        :resolution => "high"
-       puts CLIColorize.colorize("Yay! I'm gonna' be sick!", :yellow).strip
+       puts CLIColorize.colorize("Yay! I'm gunna sing The Doom Song now!", :yellow).strip
+       sleep(3)
+       puts ""
+       puts CLIColorize.colorize("Doom doom doom doom doom, doom doom do DOOM, DOOOM doom do-doom, DOOM do-doom doom doooom, doom doom dooom, do-do-DOOOM!", :yellow).strip
        sleep(5)
+       puts ""
+       puts CLIColorize.colorize("(6 months later...)", :white).strip
+       sleep(3)
+       puts ""
+       puts CLIColorize.colorize("Doom doom doo doom doom, DOOMY-DOOMY-DOOM, doom do do DOOM, Do do DOOM, doomy-doomy-doomy, Doom doom doom THE END." , :yellow).strip
+       sleep(6)
        system "clear"
        if character.facts_of_doom == ""
          puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
-         sleep(8)
+         sleep(5)
        else
-         puts CLIColorize.colorize("Facts of Doom: #{character.facts_of_doom}", :cyan).strip
+         puts CLIColorize.colorize("Facts of Doom:                                                                      #{character.facts_of_doom}", :cyan).strip
          sleep(10)
        end
        
@@ -174,7 +181,7 @@ class InvaderZim::CLI
           :resolution => "high"
           puts ""
           puts CLIColorize.colorize("The knowledge, it fills me. It is neat.", :yellow).strip
-          sleep(5)
+          sleep(6)
           menu
         elsif input == "n"
            system "clear"
@@ -189,7 +196,7 @@ class InvaderZim::CLI
           puts CLIColorize.colorize("No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!", :green).strip
           puts ""
           puts "*makes wild scratching motions with his arms*"
-          sleep(5)
+          sleep(6)
           exit
         else
           system "clear"
@@ -201,9 +208,9 @@ class InvaderZim::CLI
           :bg => "white",
           :bg_fill => false,
           :resolution => "high"
-          sleep(5)
+          sleep(3)
           puts CLIColorize.colorize("Leprechauns!", :yellow).strip
-          sleep(5)
+          sleep(6)
           menu
         end
        
@@ -219,7 +226,7 @@ class InvaderZim::CLI
        :resolution => "high"
        puts ""
        puts CLIColorize.colorize("#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
-       sleep(5)
+       sleep(6)
        menu
      else
        system "clear"
