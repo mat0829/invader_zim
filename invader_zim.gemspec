@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'David Anderson'"]
   spec.email         = ["'matandersonlv@hotmail.com'"]
 
-  spec.summary       = "app that scrapes an invader zim website"
+  spec.summary       = "app"
   spec.description   = "app that scrapes an invader zim website"
   spec.homepage      = "https://github.com/mat0829/invader_zim"
   spec.license       = "MIT"
