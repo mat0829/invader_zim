@@ -6,11 +6,12 @@ require "invader_zim/version"
 Gem::Specification.new do |spec|
   spec.name          = "invader_zim"
   spec.version       = InvaderZim::VERSION
-  spec.authors       = ["'David Anderson'"]
+  spec.authors       = ["'David Mathew Anderson'"]
   spec.email         = ["'matandersonlv@hotmail.com'"]
+  spec.date          = "2019-04-20"
 
-  spec.summary       = "app"
-  spec.description   = "app that scrapes an invader zim website"
+  spec.summary       = "Invader Zim Cli Experience"
+  spec.description   = "Provides an interactive CLI experience to learn about different Invader Zim Characters"
   spec.homepage      = "https://github.com/mat0829/invader_zim"
   spec.license       = "MIT"
 
