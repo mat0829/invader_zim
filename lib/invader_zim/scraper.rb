@@ -37,5 +37,5 @@ require 'open-uri'
       character_page_traits
     end
     
-end
+  end
   
