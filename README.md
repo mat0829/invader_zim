@@ -1,6 +1,6 @@
 # Invader Zim
 
-This Ruby Gem provides an interactive CLI experience to learn about different Invader Zim characters as per the Invader Zim Wiki website.
+This Ruby Gem provides an interactive CLI experience to learn about different Invader Zim Characters as per the Invader Zim Wiki website.
 
 ## Installation
 
