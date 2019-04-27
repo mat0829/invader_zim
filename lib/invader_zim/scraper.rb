@@ -31,8 +31,15 @@ require 'open-uri'
       character_table.each do |table|
 
         character_page_traits[:information] ||= table.css(".infobox tr td").text.strip.gsub(/[\n]/, '-')
-        character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..8].text.strip.gsub(/[\"\n\t]/, '') if table.css(".mw-content-text ul li")[0..8]
-        #character_page_traits[:personality] = table.css("p")[6].text.gsub(/[\"\n]/, '') if table.css("p")[6]
+        
+          if character.name == "Zim"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[5..10].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[0..8]
+          elsif
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..5].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[0..5]
+          else
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..8].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[0..8]
+          #character_page_traits[:personality] = table.css("p")[6].text.gsub(/[\"\n]/, '') if table.css("p")[6]
+          end
         end
       character_page_traits
     end
