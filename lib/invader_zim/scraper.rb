@@ -29,20 +29,32 @@ require 'open-uri'
       character_page_traits = {} 
 
       character_table.each do |table|
-
+    
         character_page_traits[:information] ||= table.css(".infobox tr td").text.strip.gsub(/[\n]/, '-')
-        
+          
+          if character.name == "Roboparents" || character.name == "Recap Kid" || character.name == "Ms. Bitters"
+            character_page_traits[:introduction] ||= table.css("p")[0].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+          elsif character.name == "Invader Skoodge"
+            character_page_traits[:introduction] ||= table.css("p")[1].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+          elsif character.name == "Keef"
+            character_page_traits[:introduction] ||= table.css("p")[7].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+          elsif character.name == "Gaz Membrane"
+            character_page_traits[:introduction] ||= table.css("p")[7..9].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+          else
+            character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+          end
+          
           if character.name == "Zim"
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[5..10].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[0..8]
           elsif
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..5].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[0..5]
           else
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..8].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[0..8]
-          #character_page_traits[:personality] = table.css("p")[6].text.gsub(/[\"\n]/, '') if table.css("p")[6]
           end
+          
         end
       character_page_traits
     end
     
   end
-  
+  #character_page_traits[:personality] = table.css("p")[6].text.gsub(/[\"\n]/, '') if table.css("p")[6]

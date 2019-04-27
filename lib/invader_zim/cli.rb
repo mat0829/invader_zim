@@ -128,7 +128,10 @@ class InvaderZim::CLI
      puts ""
      puts CLIColorize.colorize("Episode Debut:  #{character.debut}", :cyan).strip
      puts ""
+     puts CLIColorize.colorize("Introduction:  #{character.introduction}", :cyan).strip
+     puts ""
      puts CLIColorize.colorize("Character Information:  #{character.information}", :cyan).strip
+     puts ""
      #sleep(5)
      puts ""
      puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
