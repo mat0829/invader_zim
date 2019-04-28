@@ -130,6 +130,14 @@ class InvaderZim::CLI
      print CLIColorize.colorize("Gender:", :red).strip
      puts CLIColorize.colorize(" #{character.gender}", :cyan).strip
      puts ""
+     if character.affliation == ""
+     print CLIColorize.colorize("Affliation:", :red).strip
+     puts CLIColorize.colorize(" None", :cyan).strip
+     else
+     print CLIColorize.colorize("Affliation:", :red).strip
+     puts CLIColorize.colorize(" #{character.affliation}", :cyan).strip
+     end
+     puts ""
      print CLIColorize.colorize("Debut:", :red).strip
      puts CLIColorize.colorize("  #{character.debut}", :cyan).strip
      puts ""

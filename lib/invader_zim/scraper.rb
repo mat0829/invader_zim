@@ -34,23 +34,25 @@ require 'open-uri'
           
           if character.name == "Dib Membrane" || character.name == "Gaz Membrane" || character.name == "Keef" || character.name == "Roboparents"
             character_page_traits[:gender] ||= table.css("td")[5].text.strip.gsub(/[\n]/, '')
-            
           elsif character.name == "Zim" || character.name == "Invader Skoodge"
             character_page_traits[:gender] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
-            
           else
             character_page_traits[:gender] ||= table.css("td")[7].text.strip.gsub(/[\n]/, '')
           end
           
-          #if character.name == "Dib Membrane" || character.name == "Gaz Membrane" || character.name == "Keef" || character.name == "Roboparents"
-            character_page_traits[:affliation] ||= table.css("td")[5].text.strip.gsub(/[\n]/, '')
-            
-          #elsif character.name == "Zim" || character.name == "Invader Skoodge"
+          if character.name == "Roboparents"
             character_page_traits[:affliation] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
-            
-          #else
-            character_page_traits[:affliation] ||= table.css("td")[7].text.strip.gsub(/[\n]/, '')
-          #end
+          elsif character.name == "GIR" || character.name == "Minimoose"
+            character_page_traits[:affliation] ||= table.css("td")[9].text[13..15].strip.gsub(/[\n]/, '')
+          elsif character.name == "Dib Membrane" || character.name == "Gaz Membrane" || character.name == "Keef"
+            character_page_traits[:affliation] ||= table.css("td")[11].text.strip.gsub(/[\n]/, '')
+          elsif character.name == "Almighty Tallest Red" || character.name == "Almighty Tallest Purple" || character.name == "Tak"
+            character_page_traits[:affliation] ||= table.css("td")[13].text.strip.gsub(/[\n]/, '')
+          elsif character.name == "Zim" || character.name == "Invader Skoodge"
+            character_page_traits[:affliation] ||= table.css("td")[17].text.strip.gsub(/[\n]/, '')  
+          else
+            character_page_traits[:affliation] ||= table.css("td")[1].text.strip.gsub(/[\n]/, '')
+          end
           
           
           if character.name == "Roboparents" || character.name == "Recap Kid" || character.name == "Ms. Bitters"
