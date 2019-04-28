@@ -124,16 +124,17 @@ class InvaderZim::CLI
   
   def show_character(character)
      system "clear"
-     puts CLIColorize.colorize("Name:  #{character.name}", :cyan).strip
+     print CLIColorize.colorize("Name:", :red).strip
+     puts CLIColorize.colorize("  #{character.name}", :cyan).strip
      puts ""
-     puts CLIColorize.colorize("Episode Debut:  #{character.debut}", :cyan).strip
+     print CLIColorize.colorize("Debut:", :red).strip
+     puts CLIColorize.colorize("  #{character.debut}", :cyan).strip
      puts ""
-     puts CLIColorize.colorize("Introduction:  #{character.introduction}", :cyan).strip
+     puts CLIColorize.colorize("Introduction:", :red).strip
+     puts CLIColorize.colorize("   #{character.introduction}", :cyan).strip
      puts ""
-     puts CLIColorize.colorize("Character Appearance:  #{character.appearance}", :cyan).strip
-     puts ""
-     puts CLIColorize.colorize("Character Information:  #{character.information}", :cyan).strip
-     puts ""
+     puts CLIColorize.colorize("Appearance:", :red).strip
+     puts CLIColorize.colorize("   #{character.appearance}", :cyan).strip
      #sleep(5)
      puts ""
      puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
@@ -168,7 +169,7 @@ class InvaderZim::CLI
        else
          puts CLIColorize.colorize("Facts of Doom:", :red).strip
          puts CLIColorize.colorize("   #{character.facts_of_doom}", :cyan).strip
-         #sleep(10)
+         #sleep(8)
        end
        
        puts ""
@@ -232,7 +233,7 @@ class InvaderZim::CLI
        :resolution => "high"
        puts ""
        puts CLIColorize.colorize("#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
-       sleep(6)
+       #sleep(6)
        menu
      else
        system "clear"
