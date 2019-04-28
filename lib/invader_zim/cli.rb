@@ -125,7 +125,10 @@ class InvaderZim::CLI
   def show_character(character)
      system "clear"
      print CLIColorize.colorize("Name:", :red).strip
-     puts CLIColorize.colorize("  #{character.name}", :cyan).strip
+     puts CLIColorize.colorize(" #{character.name}", :cyan).strip
+     puts ""
+     print CLIColorize.colorize("Gender:", :red).strip
+     puts CLIColorize.colorize(" #{character.gender}", :cyan).strip
      puts ""
      print CLIColorize.colorize("Debut:", :red).strip
      puts CLIColorize.colorize("  #{character.debut}", :cyan).strip
