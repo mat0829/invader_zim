@@ -42,6 +42,16 @@ require 'open-uri'
             character_page_traits[:gender] ||= table.css("td")[7].text.strip.gsub(/[\n]/, '')
           end
           
+          #if character.name == "Dib Membrane" || character.name == "Gaz Membrane" || character.name == "Keef" || character.name == "Roboparents"
+            character_page_traits[:affliation] ||= table.css("td")[5].text.strip.gsub(/[\n]/, '')
+            
+          #elsif character.name == "Zim" || character.name == "Invader Skoodge"
+            character_page_traits[:affliation] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
+            
+          #else
+            character_page_traits[:affliation] ||= table.css("td")[7].text.strip.gsub(/[\n]/, '')
+          #end
+          
           
           if character.name == "Roboparents" || character.name == "Recap Kid" || character.name == "Ms. Bitters"
             character_page_traits[:introduction] ||= table.css("p")[0].text.strip.gsub(/[\n]/, ' ')
