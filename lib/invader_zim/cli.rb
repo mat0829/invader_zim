@@ -166,7 +166,8 @@ class InvaderZim::CLI
          puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
          sleep(5)
        else
-         puts CLIColorize.colorize("Facts of Doom:  #{character.facts_of_doom}", :cyan).strip
+         puts CLIColorize.colorize("Facts of Doom:", :red).strip
+         puts CLIColorize.colorize("   #{character.facts_of_doom}", :cyan).strip
          #sleep(10)
        end
        
@@ -186,7 +187,7 @@ class InvaderZim::CLI
           :resolution => "high"
           puts ""
           puts CLIColorize.colorize("The knowledge, it fills me. It is neat.", :yellow).strip
-          sleep(6)
+          #sleep(6)
           menu
         elsif input == "n"
            system "clear"
