@@ -29,8 +29,12 @@ require 'open-uri'
       character_page_traits = {} 
 
       character_table.each do |table|
-    
-        #character_page_traits[:information] ||= table.css(".infobox tr td").text.strip.gsub(/[\n]/, '-')
+          
+          if character.name == "GIR" || character.name == "Professor Membrane" || character.name == "Ms. Bitters" || character.name == "Recap Kid" || character.name == "Minimoose" || character.name == "Roboparents"
+            character_page_traits[:homeworld] ||= table.css("td")[1].text.strip.gsub(/[\n]/, '')
+          else
+            character_page_traits[:homeworld] ||= table.css("td")[3].text.strip.gsub(/[\n]/, '')
+          end
           
           if character.name == "Dib Membrane" || character.name == "Gaz Membrane" || character.name == "Keef" || character.name == "Roboparents"
             character_page_traits[:gender] ||= table.css("td")[5].text.strip.gsub(/[\n]/, '')
@@ -64,7 +68,7 @@ require 'open-uri'
           elsif character.name == "Gaz Membrane"
             character_page_traits[:introduction] ||= table.css("p")[7..9].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
           else
-            character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+            character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"").delete("[1]")
           end
           
           if character.name == "Keef"

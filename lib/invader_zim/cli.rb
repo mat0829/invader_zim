@@ -127,15 +127,26 @@ class InvaderZim::CLI
      print CLIColorize.colorize("Name:", :red).strip
      puts CLIColorize.colorize(" #{character.name}", :cyan).strip
      puts ""
+     if character.name == "Professor Membrane" || character.name == "Ms. Bitters" || character.name == "Recap Kid"
+      print CLIColorize.colorize("Homeworld:", :red).strip
+      puts CLIColorize.colorize(" Earth", :cyan).strip
+     elsif character.name == "GIR" || character.name == "Minimoose" || character.name == "Roboparents"
+      print CLIColorize.colorize("Homeworld:", :red).strip
+      puts CLIColorize.colorize(" Irk", :cyan).strip
+     else
+      print CLIColorize.colorize("Homeworld:", :red).strip
+      puts CLIColorize.colorize(" #{character.homeworld}", :cyan).strip
+     end
+     puts ""
      print CLIColorize.colorize("Gender:", :red).strip
      puts CLIColorize.colorize(" #{character.gender}", :cyan).strip
      puts ""
      if character.affliation == ""
-     print CLIColorize.colorize("Affliation:", :red).strip
-     puts CLIColorize.colorize(" None", :cyan).strip
+      print CLIColorize.colorize("Affliation:", :red).strip
+      puts CLIColorize.colorize(" None", :cyan).strip
      else
-     print CLIColorize.colorize("Affliation:", :red).strip
-     puts CLIColorize.colorize(" #{character.affliation}", :cyan).strip
+      print CLIColorize.colorize("Affliation:", :red).strip
+      puts CLIColorize.colorize(" #{character.affliation}", :cyan).strip
      end
      puts ""
      print CLIColorize.colorize("Debut:", :red).strip
