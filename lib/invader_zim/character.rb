@@ -1,5 +1,5 @@
 class InvaderZim::Character
-  attr_accessor :name, :debut, :profile_url, :information, :facts_of_doom, :introduction
+  attr_accessor :name, :debut, :profile_url, :information, :introduction, :appearance, :facts_of_doom
   
   @@all = []
 

@@ -130,6 +130,8 @@ class InvaderZim::CLI
      puts ""
      puts CLIColorize.colorize("Introduction:  #{character.introduction}", :cyan).strip
      puts ""
+     puts CLIColorize.colorize("Character Appearance:  #{character.appearance}", :cyan).strip
+     puts ""
      puts CLIColorize.colorize("Character Information:  #{character.information}", :cyan).strip
      puts ""
      #sleep(5)
@@ -164,7 +166,7 @@ class InvaderZim::CLI
          puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
          sleep(5)
        else
-         puts CLIColorize.colorize("Facts of Doom:                                                                      #{character.facts_of_doom}", :cyan).strip
+         puts CLIColorize.colorize("Facts of Doom:  #{character.facts_of_doom}", :cyan).strip
          #sleep(10)
        end
        

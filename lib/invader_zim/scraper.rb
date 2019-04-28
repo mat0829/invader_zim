@@ -44,6 +44,14 @@ require 'open-uri'
             character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
           end
           
+          if character.name == "Keef"
+            character_page_traits[:appearance] ||= table.css("p")[2].text.gsub(/[\"\n]/, '').delete("\u00A0").delete("\u00E4").delete("\u00ED")
+          elsif character.name == "Dib Membrane" || character.name == "Ms. Bitters" || character.name == "Recap Kid" || character.name == "Invader Skoodge"
+            character_page_traits[:appearance] ||= table.css("p")[3].text.gsub(/[\"\n]/, '').delete("\u00A0").delete("\u00E4").delete("\u00ED")
+          else
+            character_page_traits[:appearance] ||= table.css("p")[4].text.gsub(/[\"\n]/, '').delete("\u00A0").delete("\u00E4").delete("\u00ED")
+          end
+          
           if character.name == "Zim"
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[5..10].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[0..8]
           elsif
