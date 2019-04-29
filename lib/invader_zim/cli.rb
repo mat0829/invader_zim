@@ -31,6 +31,19 @@ class InvaderZim::CLI
     puts ""
     input = gets.strip.downcase
     if input == "skip"
+      system "clear"
+      CatpixMini::print_image "zim.gif",
+    :limit_x => 1,
+    :limit_y => 0,
+    :center_x => false,
+    :center_y => false,
+    :bg => "white",
+    :bg_fill => false,
+    :resolution => "high"
+    sleep(2)
+    puts ""
+      puts CLIColorize.colorize("Oh, it's you #{@human.name}! I didn't recognize you my most worthy friend. Head down to the secret lair so we can rain DOOM upon the DOOMED heads of our DOOMED enemies!" , :green)
+    sleep(6)
       menu
     else
     system "clear"
