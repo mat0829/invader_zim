@@ -57,7 +57,6 @@ class InvaderZim::CLI
     :resolution => "high"
     sleep(2)
     puts ""
-    sleep (1)
     puts CLIColorize.colorize("Computer, give me all the information you have on #{@human.name}.", :green).strip
     puts ""
     sleep(3)
