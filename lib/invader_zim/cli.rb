@@ -42,7 +42,7 @@ class InvaderZim::CLI
     :resolution => "high"
     sleep(2)
     puts ""
-      puts CLIColorize.colorize("Oh, it's you #{@human.name}! I didn't recognize you my most worthy friend. Head down to the secret lair to some rain DOOM upon the DOOMED heads of our DOOMED enemies!" , :green)
+      puts CLIColorize.colorize("Oh, it's you #{@human.name}! I didn't recognize you my most worthy friend! Head down to the secret lair to some rain DOOM upon the DOOMED heads of our DOOMED enemies!" , :green)
     sleep(6)
       menu
     else
@@ -188,7 +188,7 @@ class InvaderZim::CLI
      puts ""
      puts CLIColorize.colorize("Appearance:", :red).strip
      puts CLIColorize.colorize("   #{character.appearance}", :cyan).strip
-     sleep(5)
+     sleep(3)
      puts ""
      puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      
@@ -205,28 +205,28 @@ class InvaderZim::CLI
        :bg_fill => false,
        :resolution => "high"
        puts CLIColorize.colorize("Yay! I'm gunna sing The Doom Song now!", :yellow).strip
-       #sleep(3)
+       sleep(3)
        puts ""
        puts CLIColorize.colorize("Doom doom doom doom doom, doom doom do DOOM, DOOOM doom do-doom, DOOM do-doom doom doooom, doom doom dooom, do-do-DOOOM!", :yellow).strip
-       #sleep(5)
+       sleep(5)
        puts ""
        puts CLIColorize.colorize("(6 months later...)", :white).strip
-       #sleep(3)
+       sleep(3)
        puts ""
        puts CLIColorize.colorize("Doom doom doo doom doom, DOOMY-DOOMY-DOOM, doom do do DOOM, Do do DOOM, doomy-doomy-doomy, Doom doom doom THE END." , :yellow).strip
-       #sleep(6)
+       sleep(6)
        system "clear"
        if character.facts_of_doom == ""
          puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
-         sleep(5)
+         sleep(3)
        else
          puts CLIColorize.colorize("Facts of Doom:", :red).strip
          puts CLIColorize.colorize("   #{character.facts_of_doom}", :cyan).strip
-         sleep(8)
+         sleep(3)
        end
        
        puts ""
-       puts CLIColorize.colorize("#{@human.name}, would you like to gain more knowledges about a different character? Enter Y or N", :red).strip
+       puts CLIColorize.colorize("#{@human.name}, would you like to gain more knowledge about a different character? Enter Y or N", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
@@ -256,7 +256,7 @@ class InvaderZim::CLI
           puts CLIColorize.colorize("No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!", :green).strip
           puts ""
           puts "*makes wild scratching motions with his arms*"
-          sleep(6)
+          sleep(5)
           exit
         else
           system "clear"

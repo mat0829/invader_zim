@@ -62,37 +62,46 @@ require 'open-uri'
           if character.name == "Roboparents" || character.name == "Recap Kid" || character.name == "Ms. Bitters"
             character_page_traits[:introduction] ||= table.css("p")[0].text.strip.gsub(/[\n]/, ' ')
           elsif character.name == "Invader Skoodge"
-            character_page_traits[:introduction] ||= table.css("p")[1].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+            character_page_traits[:introduction] ||= table.css("p")[1].text.strip.gsub(/[\n]/, ' ').delete("\"")
           elsif character.name == "Keef"
-            character_page_traits[:introduction] ||= table.css("p")[7].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+            character_page_traits[:introduction] ||= table.css("p")[7].text.strip.gsub(/[\n]/, ' ').delete("\"")
           elsif character.name == "Gaz Membrane"
-            character_page_traits[:introduction] ||= table.css("p")[7..9].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")
+            character_page_traits[:introduction] ||= table.css("p")[7..9].text.strip.gsub(/[\n]/, ' ').delete("\"").delete("\u2019")
           else
-            character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"").delete("[1]")
+            character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")#.delete("[1]")
           end
           
           if character.name == "Keef"
             character_page_traits[:appearance] ||= table.css("p")[2].text.gsub(/[\"\n]/, '')
-          elsif character.name == "Dib Membrane" || character.name == "Recap Kid" || character.name == "Invader Skoodge" || character.name == "Minimoose"
+          elsif character.name == "Dib Membrane" || character.name == "Invader Skoodge" || character.name == "Minimoose"
             character_page_traits[:appearance] ||= table.css("p")[3].text.gsub(/[\"\n]/, '')
           elsif character.name == "Gaz Membrane" || character.name == "Tak"
-            character_page_traits[:appearance] ||= table.css("p")[5].text.gsub(/[\"\n]/, '')  
+            character_page_traits[:appearance] ||= table.css("p")[5].text.gsub(/[\"\n]/, '')
+          elsif character.name == "Recap Kid"
+            character_page_traits[:appearance] ||= table.css("p")[3].text.gsub(/[\"\n]/, '').delete("[1]")
           else
             character_page_traits[:appearance] ||= table.css("p")[4].text.gsub(/[\"\n]/, '').delete("\u00A0").delete("\u00E4").delete("\u00ED")
           end
           
           if character.name == "Minimoose"
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..5].text.strip.gsub(/[\"\n\t]/, '') 
-              #if table.css(".mw-content-text ul li")[0..5]
           elsif character.name == "Zim"
-            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[5..10].text.strip.gsub(/[\"\n\t]/, '') #if table.css(".mw-content-text ul li")[5..10]
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[5..10].text.strip.gsub(/[\"\n\t]/, '') 
+          elsif character.name == "Dib Membrane"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[26..30].text.strip.gsub(/[\"\n\t]/, '') 
+          elsif character.name == "Gaz Membrane"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[4..8].text.strip.gsub(/[\"\n]/, '').delete("\t")
+          elsif character.name == "Ms. Bitters" || character.name == "Almighty Tallest Purple" || character.name == "Keef"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..6].text.strip.gsub(/[\"\n]/, '').delete("[1]").delete("[2]").delete("[3]")
+          elsif character.name == "Recap Kid"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[42..45].text.strip.gsub(/[\"\n]/, '').delete("[2]")
+          elsif character.name == "Tak"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[17..19].text.strip.gsub(/[\"\n]/, '').delete("\"")
           else
-            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..8].text.strip.gsub(/[\"\n\t]/, '').delete("[1]").delete("[2]").delete("[3]")   #if table.css(".mw-content-text ul li")[0..8]
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..8].text.strip.gsub(/[\"\n\t]/, '')
           end
-          
         end
       character_page_traits
     end
     
   end
-  #character_page_traits[:personality] = table.css("p")[6].text.gsub(/[\"\n]/, '') if table.css("p")[6]
