@@ -17,6 +17,16 @@ And then execute:
 Or install it yourself as:
 
     $ gem install invader_zim
+    
+## Linux Installation
+
+Add this line to your application's Gemfile:
+
+    sudo apt-get install libmagickwand-dev
+    
+And then execute:
+
+    sudo apt-get install imagemagick
 
 ## Usage
 
