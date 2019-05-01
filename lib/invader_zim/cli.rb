@@ -110,7 +110,7 @@ class InvaderZim::CLI
      puts CLIColorize.colorize(" #{character.gender}\n", :cyan).strip
      if character.affliation == ""
       print CLIColorize.colorize("Affliation:", :red).strip
-      puts CLIColorize.colorize(" None", :cyan).strip
+      puts CLIColorize.colorize(" None\n", :cyan).strip
      else
       print CLIColorize.colorize("Affliation:", :red).strip
       puts CLIColorize.colorize(" #{character.affliation}\n", :cyan).strip
@@ -175,7 +175,7 @@ class InvaderZim::CLI
        system "clear"
        print_image("ms_bitters.gif")
        puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
-       sleep(6)
+       #sleep(6)
        menu
      else
        system "clear"
