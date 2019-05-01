@@ -98,8 +98,7 @@ class InvaderZim::CLI
   def show_character(character)
      system "clear"
      print CLIColorize.colorize("Name:", :red).strip
-     puts CLIColorize.colorize(" #{character.name}", :cyan).strip
-     puts ""
+     puts CLIColorize.colorize(" #{character.name}\n", :cyan).strip
      if character.name == "Professor Membrane" || character.name == "Ms. Bitters" || character.name == "Recap Kid"
       print CLIColorize.colorize("Homeworld:", :red).strip
       puts CLIColorize.colorize(" Earth", :cyan).strip
@@ -110,28 +109,22 @@ class InvaderZim::CLI
       print CLIColorize.colorize("Homeworld:", :red).strip
       puts CLIColorize.colorize(" #{character.homeworld}", :cyan).strip
      end
-     puts ""
-     print CLIColorize.colorize("Gender:", :red).strip
-     puts CLIColorize.colorize(" #{character.gender}", :cyan).strip
-     puts ""
+     print CLIColorize.colorize("\nGender:", :red).strip
+     puts CLIColorize.colorize(" #{character.gender}\n", :cyan).strip
      if character.affliation == ""
       print CLIColorize.colorize("Affliation:", :red).strip
       puts CLIColorize.colorize(" None", :cyan).strip
      else
       print CLIColorize.colorize("Affliation:", :red).strip
-      puts CLIColorize.colorize(" #{character.affliation}", :cyan).strip
+      puts CLIColorize.colorize(" #{character.affliation}\n", :cyan).strip
      end
-     puts ""
      print CLIColorize.colorize("Debut:", :red).strip
-     puts CLIColorize.colorize("  #{character.debut}", :cyan).strip
-     puts ""
+     puts CLIColorize.colorize("  #{character.debut}\n", :cyan).strip
      puts CLIColorize.colorize("Introduction:", :red).strip
-     puts CLIColorize.colorize("   #{character.introduction}", :cyan).strip
-     puts ""
+     puts CLIColorize.colorize("   #{character.introduction}\n", :cyan).strip
      puts CLIColorize.colorize("Appearance:", :red).strip
-     puts CLIColorize.colorize("   #{character.appearance}", :cyan).strip
+     puts CLIColorize.colorize("   #{character.appearance}\n", :cyan).strip
      sleep(3)
-     puts ""
      puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      
      input = gets.strip.downcase
