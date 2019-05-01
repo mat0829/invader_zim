@@ -219,8 +219,3 @@ class InvaderZim::CLI
   end
   
 end
-  
-  
-#image = MiniMagick::Image.open("https://img00.deviantart.net/4fa9/i/2005/008/2/1/mini_moose_by_chunhyaeng.gif")
-#image.contrast
-#image.write("mini_moose1.gif")
