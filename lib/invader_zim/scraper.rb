@@ -74,13 +74,14 @@ require 'open-uri'
             character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")#.delete("[1]")
           end
           
-          if character.name == "Keef"
+          case character.name
+          when "Keef"
             character_page_traits[:appearance] ||= table.css("p")[2].text.gsub(/[\"\n]/, '')
-          elsif character.name == "Dib Membrane" || character.name == "Invader Skoodge" || character.name == "Minimoose"
+          when "Dib Membrane", "Invader Skoodge", "Minimoose"
             character_page_traits[:appearance] ||= table.css("p")[3].text.gsub(/[\"\n]/, '')
-          elsif character.name == "Gaz Membrane" || character.name == "Tak"
+          when "Gaz Membrane", "Tak"
             character_page_traits[:appearance] ||= table.css("p")[5].text.gsub(/[\"\n]/, '')
-          elsif character.name == "Recap Kid"
+          when "Recap Kid"
             character_page_traits[:appearance] ||= table.css("p")[3].text.gsub(/[\"\n]/, '').delete("[1]")
           else
             character_page_traits[:appearance] ||= table.css("p")[4].text.gsub(/[\"\n]/, '').delete("\u00A0").delete("\u00E4").delete("\u00ED")
