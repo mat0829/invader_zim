@@ -61,14 +61,14 @@ require 'open-uri'
             character_page_traits[:affliation] ||= table.css("td")[1].text.strip.gsub(/[\n]/, '')
           end
           
-          
-          if character.name == "Roboparents" || character.name == "Recap Kid" || character.name == "Ms. Bitters"
+          case character.name
+          when "Roboparents", "Recap Kid", "Ms. Bitters"
             character_page_traits[:introduction] ||= table.css("p")[0].text.strip.gsub(/[\n]/, ' ')
-          elsif character.name == "Invader Skoodge"
+          when "Invader Skoodge"
             character_page_traits[:introduction] ||= table.css("p")[1].text.strip.gsub(/[\n]/, ' ').delete("\"")
-          elsif character.name == "Keef"
+          when "Keef"
             character_page_traits[:introduction] ||= table.css("p")[7].text.strip.gsub(/[\n]/, ' ').delete("\"")
-          elsif character.name == "Gaz Membrane"
+          when "Gaz Membrane"
             character_page_traits[:introduction] ||= table.css("p")[7..9].text.strip.gsub(/[\n]/, ' ').delete("\"").delete("\u2019")
           else
             character_page_traits[:introduction] ||= table.css("p")[2].text.strip.gsub(/[\n]/, ' ').gsub(/[\u00A0\u00E1\u2019]/, ' ').delete("\"")#.delete("[1]")
