@@ -87,19 +87,20 @@ require 'open-uri'
             character_page_traits[:appearance] ||= table.css("p")[4].text.gsub(/[\"\n]/, '').delete("\u00A0").delete("\u00E4").delete("\u00ED")
           end
           
-          if character.name == "Minimoose"
-            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..5].text.strip.gsub(/[\"\n\t]/, '') 
-          elsif character.name == "Zim"
-            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[5..10].text.strip.gsub(/[\"\n\t]/, '') 
-          elsif character.name == "Dib Membrane"
-            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[26..30].text.strip.gsub(/[\"\n\t]/, '') 
-          elsif character.name == "Gaz Membrane"
+          case character.name
+          when "Minimoose"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..5].text.strip.gsub(/[\"\n\t]/, '')
+          when "Zim"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[5..10].text.strip.gsub(/[\"\n\t]/, '')
+          when "Dib Membrane"
+            character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[26..30].text.strip.gsub(/[\"\n\t]/, '')
+          when "Gaz Membrane"
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[4..8].text.strip.gsub(/[\"\n]/, '').delete("\t")
-          elsif character.name == "Ms. Bitters" || character.name == "Almighty Tallest Purple" || character.name == "Keef"
+          when "Ms. Bitters", "Almighty Tallest Purple", "Keef"
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..6].text.strip.gsub(/[\"\n]/, '').delete("[1]").delete("[2]").delete("[3]")
-          elsif character.name == "Recap Kid"
+          when "Recap Kid"
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[42..45].text.strip.gsub(/[\"\n]/, '').delete("[2]")
-          elsif character.name == "Tak"
+          when "Tak"
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[17..19].text.strip.gsub(/[\"\n]/, '').delete("\"")
           else
             character_page_traits[:facts_of_doom] ||= table.css(".mw-content-text ul li")[0..8].text.strip.gsub(/[\"\n\t]/, '')

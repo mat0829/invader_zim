@@ -129,13 +129,13 @@ class InvaderZim::CLI
        system "clear"
        print_image("girdisguise.gif")
        puts CLIColorize.colorize("Yay! I'm gunna sing The Doom Song now!\n", :yellow).strip
-       sleep(3)
+       #sleep(3)
        puts CLIColorize.colorize("Doom doom doom doom doom, doom doom do DOOM, DOOOM doom do-doom, DOOM do-doom doom doooom, doom doom dooom, do-do-DOOOM!\n", :yellow).strip
-       sleep(5)
+       #sleep(5)
        puts CLIColorize.colorize("(6 months later...)\n", :white).strip
-       sleep(3)
+       #sleep(3)
        puts CLIColorize.colorize("Doom doom doo doom doom, DOOMY-DOOMY-DOOM, doom do do DOOM, Do do DOOM, doomy-doomy-doomy, Doom doom doom THE END." , :yellow).strip
-       sleep(6)
+       #sleep(6)
        system "clear"
        if character.facts_of_doom == ""
          puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
@@ -153,7 +153,7 @@ class InvaderZim::CLI
           system "clear"
           print_image("gir_red.gif")
           puts CLIColorize.colorize("\nThe knowledge, it fills me. It is neat.", :yellow).strip
-          sleep(6)
+          #sleep(6)
           menu
         elsif input == "n"
            system "clear"
