@@ -1,6 +1,5 @@
 class InvaderZim::CLI 
   
-  
   def call
     system "clear"
     make_characters
@@ -92,8 +91,6 @@ class InvaderZim::CLI
       menu
     end
   end
-  
-  
   
   def show_character(character)
      system "clear"
