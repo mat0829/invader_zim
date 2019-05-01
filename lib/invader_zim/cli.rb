@@ -161,7 +161,7 @@ class InvaderZim::CLI
         elsif input == "n"
            system "clear"
           print_image("zim2.gif")
-          puts CLIColorize.colorize("No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
+          puts CLIColorize.colorize("Nooooo! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
           puts "*makes wild scratching motions with his arms*"
           sleep(5)
           exit
@@ -196,10 +196,8 @@ class InvaderZim::CLI
   end
   
   def add_attributes_to_characters(character)
-    #Character.all.each do |character|
       attributes = InvaderZim::Scraper.scrape_profile_page(character)
       character.add_character_attributes(attributes)
-    #end
   end
   
   def show_characters_list
