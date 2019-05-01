@@ -70,8 +70,7 @@ class InvaderZim::CLI
   def menu
     system "clear"
     show_characters_list
-    puts ""
-    puts CLIColorize.colorize("#{@human.name}, choose a character's number from the list and hit enter.", :red)
+    puts CLIColorize.colorize("\n#{@human.name}, choose a character's number from the list and hit enter.", :red)
     input = gets.strip.to_i
     
     if input.between?(1,14)
@@ -82,17 +81,13 @@ class InvaderZim::CLI
       system "clear"
       print_image("almighty_tallest.gif")
       sleep(3)
-      puts CLIColorize.colorize("Almighty Tallest Purple: 'What are you doing?'" , :magenta)
-      puts ""
+      puts CLIColorize.colorize("Almighty Tallest Purple: 'What are you doing?'\n" , :magenta)
       sleep(4)
-      puts CLIColorize.colorize("Almighty Tallest Red: 'I am running a diagnostic to find the problem! YOU! Save the doughnuts!'" , :red)
-      puts ""
+      puts CLIColorize.colorize("Almighty Tallest Red: 'I am running a diagnostic to find the problem! YOU! Save the doughnuts!'\n" , :red)
       sleep(4)
-      puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@human.name} put in something other then 1 to 14.'" , :red)
-      puts ""
+      puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@human.name} put in something other then 1 to 14.'\n" , :red)
       sleep(4)
-      puts CLIColorize.colorize("Tallest Purple: '#{@human.name}, You should have tried harder!'" , :magenta)
-      puts ""
+      puts CLIColorize.colorize("Tallest Purple: '#{@human.name}, You should have tried harder!'\n" , :magenta)
       sleep(4)
       menu
     end
