@@ -9,14 +9,15 @@ class InvaderZim::CLI
   end
   
   def introduction
-    CatpixMini::print_image "zim.gif",
-    :limit_x => 1,
-    :limit_y => 0,
-    :center_x => false,
-    :center_y => false,
-    :bg => "white",
-    :bg_fill => false,
-    :resolution => "high"
+    print_image("zim.gif")
+    #CatpixMini::print_image "zim.gif",
+    #:limit_x => 1,
+    #:limit_y => 0,
+    #:center_x => false,
+    #:center_y => false,
+    #:bg => "white",
+    #:bg_fill => false,
+    #:resolution => "high"
     sleep(2)
     puts CLIColorize.colorize("Greetings human! It is I, ZIM!", :green).strip
     puts ""
@@ -321,6 +322,17 @@ class InvaderZim::CLI
     InvaderZim::Character.all.each.with_index(1) do |character, index|
       puts CLIColorize.colorize("#{index}. #{character.name}", :cyan)
     end
+  end
+  
+  def print_image(img)
+    CatpixMini::print_image img,
+    :limit_x => 1,
+    :limit_y => 0,
+    :center_x => false,
+    :center_y => false,
+    :bg => "white",
+    :bg_fill => false,
+    :resolution => "high"
   end
   
 end
