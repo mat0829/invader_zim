@@ -37,9 +37,10 @@ require 'open-uri'
             character_page_traits[:homeworld] ||= table.css("td")[3].text.strip.gsub(/[\n]/, '')
           end
           
-          if character.name == "Dib Membrane" || character.name == "Gaz Membrane" || character.name == "Keef" || character.name == "Roboparents"
+          case character.name
+          when "Dib Membrane", "Gaz Membrane", "Keef", "Roboparents"
             character_page_traits[:gender] ||= table.css("td")[5].text.strip.gsub(/[\n]/, '')
-          elsif character.name == "Zim" || character.name == "Invader Skoodge"
+          when "Zim", "Invader Skoodge"
             character_page_traits[:gender] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
           else
             character_page_traits[:gender] ||= table.css("td")[7].text.strip.gsub(/[\n]/, '')
