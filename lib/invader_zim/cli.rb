@@ -119,7 +119,7 @@ class InvaderZim::CLI
       puts CLIColorize.colorize(" #{character.affliation}\n", :cyan).strip
      end
      print CLIColorize.colorize("Debut:", :red).strip
-     puts CLIColorize.colorize("  #{character.debut}\n", :cyan).strip
+     puts CLIColorize.colorize(" #{character.debut}\n", :cyan).strip
      puts CLIColorize.colorize("Introduction:", :red).strip
      puts CLIColorize.colorize("   #{character.introduction}\n", :cyan).strip
      puts CLIColorize.colorize("Appearance:", :red).strip
@@ -128,19 +128,15 @@ class InvaderZim::CLI
      puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      
      input = gets.strip.downcase
-       puts ""
      if input == "y"
        system "clear"
        print_image("girdisguise.gif")
-       puts CLIColorize.colorize("Yay! I'm gunna sing The Doom Song now!", :yellow).strip
+       puts CLIColorize.colorize("Yay! I'm gunna sing The Doom Song now!\n", :yellow).strip
        sleep(3)
-       puts ""
-       puts CLIColorize.colorize("Doom doom doom doom doom, doom doom do DOOM, DOOOM doom do-doom, DOOM do-doom doom doooom, doom doom dooom, do-do-DOOOM!", :yellow).strip
+       puts CLIColorize.colorize("Doom doom doom doom doom, doom doom do DOOM, DOOOM doom do-doom, DOOM do-doom doom doooom, doom doom dooom, do-do-DOOOM!\n", :yellow).strip
        sleep(5)
-       puts ""
-       puts CLIColorize.colorize("(6 months later...)", :white).strip
+       puts CLIColorize.colorize("(6 months later...)\n", :white).strip
        sleep(3)
-       puts ""
        puts CLIColorize.colorize("Doom doom doo doom doom, DOOMY-DOOMY-DOOM, doom do do DOOM, Do do DOOM, doomy-doomy-doomy, Doom doom doom THE END." , :yellow).strip
        sleep(6)
        system "clear"
@@ -149,26 +145,23 @@ class InvaderZim::CLI
          sleep(3)
        else
          puts CLIColorize.colorize("Facts of Doom:", :red).strip
-         puts CLIColorize.colorize("   #{character.facts_of_doom}", :cyan).strip
+         puts CLIColorize.colorize("   #{character.facts_of_doom}\n", :cyan).strip
          sleep(3)
        end
        
-       puts ""
        puts CLIColorize.colorize("#{@human.name}, would you like to gain more knowledge about a different character? Enter Y or N", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
           system "clear"
           print_image("gir_red.gif")
-          puts ""
-          puts CLIColorize.colorize("The knowledge, it fills me. It is neat.", :yellow).strip
+          puts CLIColorize.colorize("\nThe knowledge, it fills me. It is neat.", :yellow).strip
           sleep(6)
           menu
         elsif input == "n"
            system "clear"
           print_image("zim2.gif")
-          puts CLIColorize.colorize("No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!", :green).strip
-          puts ""
+          puts CLIColorize.colorize("No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
           puts "*makes wild scratching motions with his arms*"
           sleep(5)
           exit
@@ -184,8 +177,7 @@ class InvaderZim::CLI
      elsif input == "n"
        system "clear"
        print_image("ms_bitters.gif")
-       puts ""
-       puts CLIColorize.colorize("#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
+       puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
        sleep(6)
        menu
      else
