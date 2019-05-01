@@ -10,14 +10,6 @@ class InvaderZim::CLI
   
   def introduction
     print_image("zim.gif")
-    #CatpixMini::print_image "zim.gif",
-    #:limit_x => 1,
-    #:limit_y => 0,
-    #:center_x => false,
-    #:center_y => false,
-    #:bg => "white",
-    #:bg_fill => false,
-    #:resolution => "high"
     sleep(2)
     puts CLIColorize.colorize("Greetings human! It is I, ZIM!", :green).strip
     puts ""
@@ -33,14 +25,7 @@ class InvaderZim::CLI
     input = gets.strip.downcase
     if input == "skip"
       system "clear"
-      CatpixMini::print_image "zim.gif",
-    :limit_x => 1,
-    :limit_y => 0,
-    :center_x => false,
-    :center_y => false,
-    :bg => "white",
-    :bg_fill => false,
-    :resolution => "high"
+      print_image("zim.gif")
     sleep(2)
     puts ""
       puts CLIColorize.colorize("Oh, it's you #{@human.name}! I didn't recognize you my most worthy friend! Head down to the secret lair to some rain DOOM upon the DOOMED heads of our DOOMED enemies!" , :green)
@@ -48,14 +33,7 @@ class InvaderZim::CLI
       menu
     else
     system "clear"
-    CatpixMini::print_image "zim.gif",
-    :limit_x => 1,
-    :limit_y => 0,
-    :center_x => false,
-    :center_y => false,
-    :bg => "white",
-    :bg_fill => false,
-    :resolution => "high"
+    print_image("zim.gif")
     sleep(2)
     puts ""
     puts CLIColorize.colorize("Computer, give me all the information you have on #{@human.name}.", :green).strip
@@ -94,14 +72,7 @@ class InvaderZim::CLI
     puts ""
     sleep(4)
     system "clear"
-    CatpixMini::print_image "zim_and_gir.gif",
-    :limit_x => 1,
-    :limit_y => 0,
-    :center_x => false,
-    :center_y => false,
-    :bg => "white",
-    :bg_fill => false,
-    :resolution => "high"
+    print_image("zim_and_gir.gif")
     puts CLIColorize.colorize("*You stand on the platform and start descending*" , :white)
     puts ""
     sleep(8)
@@ -126,14 +97,7 @@ class InvaderZim::CLI
       show_character(character)
     else 
       system "clear"
-      CatpixMini::print_image "almighty_tallest.gif",
-      :limit_x => 1,
-      :limit_y => 0,
-      :center_x => false,
-      :center_y => false,
-      :bg => "white",
-      :bg_fill => false,
-      :resolution => "high"
+      print_image("almighty_tallest.gif")
       sleep(3)
       puts CLIColorize.colorize("Almighty Tallest Purple: 'What are you doing?'" , :magenta)
       puts ""
@@ -196,14 +160,7 @@ class InvaderZim::CLI
        puts ""
      if input == "y"
        system "clear"
-       CatpixMini::print_image "girdisguise.gif",
-       :limit_x => 1,
-       :limit_y => 0,
-       :center_x => false,
-       :center_y => false,
-       :bg => "white",
-       :bg_fill => false,
-       :resolution => "high"
+       print_image("girdisguise.gif")
        puts CLIColorize.colorize("Yay! I'm gunna sing The Doom Song now!", :yellow).strip
        sleep(3)
        puts ""
@@ -231,28 +188,14 @@ class InvaderZim::CLI
         input = gets.strip.downcase
         if input == "y"
           system "clear"
-          CatpixMini::print_image "gir_red.gif",
-          :limit_x => 1,
-          :limit_y => 0,
-          :center_x => false,
-          :center_y => false,
-          :bg => "white",
-          :bg_fill => false,
-          :resolution => "high"
+          print_image("gir_red.gif")
           puts ""
           puts CLIColorize.colorize("The knowledge, it fills me. It is neat.", :yellow).strip
           sleep(6)
           menu
         elsif input == "n"
            system "clear"
-          CatpixMini::print_image "zim2.gif",
-          :limit_x => 1,
-          :limit_y => 0,
-          :center_x => false,
-          :center_y => false,
-          :bg => "white",
-          :bg_fill => false,
-          :resolution => "high"
+          print_image("zim2.gif")
           puts CLIColorize.colorize("No! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!", :green).strip
           puts ""
           puts "*makes wild scratching motions with his arms*"
@@ -260,14 +203,7 @@ class InvaderZim::CLI
           exit
         else
           system "clear"
-          CatpixMini::print_image "gir_transformation.gif",
-          :limit_x => 1,
-          :limit_y => 0,
-          :center_x => false,
-          :center_y => false,
-          :bg => "white",
-          :bg_fill => false,
-          :resolution => "high"
+          print_image("gir_transformation.gif")
           sleep(3)
           puts CLIColorize.colorize("Leprechauns!", :yellow).strip
           sleep(6)
@@ -276,28 +212,14 @@ class InvaderZim::CLI
        
      elsif input == "n"
        system "clear"
-       CatpixMini::print_image "ms_bitters.gif",
-       :limit_x => 1,
-       :limit_y => 0,
-       :center_x => false,
-       :center_y => false,
-       :bg => "white",
-       :bg_fill => false,
-       :resolution => "high"
+       print_image("ms_bitters.gif")
        puts ""
        puts CLIColorize.colorize("#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
        sleep(6)
        menu
      else
        system "clear"
-       CatpixMini::print_image "mini_moose.gif",
-       :limit_x => 1,
-       :limit_y => 0,
-       :center_x => false,
-       :center_y => false,
-       :bg => "white",
-       :bg_fill => false,
-       :resolution => "high"
+       print_image("mini_moose.gif")
        puts CLIColorize.colorize("You have entered an incorrect key. Minimoose judges you. The Shame....", :white).strip
        sleep(6)
        menu
