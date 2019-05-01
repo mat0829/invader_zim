@@ -20,11 +20,9 @@ Or install it yourself as:
     
 ## Linux Installation
 
-Add this line to your application's Gemfile:
+Put these in your terminal:
 
     sudo apt-get install libmagickwand-dev
-    
-And then execute:
 
     sudo apt-get install imagemagick
 
