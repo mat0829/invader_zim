@@ -24,9 +24,9 @@ class InvaderZim::CLI
     if input == "skip"
       system "clear"
       print_image("zim.gif")
-    sleep(2)
+    #sleep(2)
       puts CLIColorize.colorize("\nOh, it's you #{@human.name}! I didn't recognize you my most worthy friend! Head down to the secret lair to some rain DOOM upon the DOOMED heads of our DOOMED enemies!" , :green)
-    sleep(6)
+    #sleep(6)
       menu
     else
     system "clear"
@@ -77,8 +77,12 @@ class InvaderZim::CLI
     
     if input.between?(1,14)
       character = InvaderZim::Character.find(input.to_i)
-      add_attributes_to_characters(character)
-      show_character(character)
+      if character.homeworld == nil
+        character.add_attributes_to_characters(character)
+        show_character(character)
+      else
+        show_character(character)
+      end
     else 
       system "clear"
       print_image("almighty_tallest.gif")
@@ -178,7 +182,7 @@ class InvaderZim::CLI
        system "clear"
        print_image("ms_bitters.gif")
        puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
-       sleep(6)
+       #sleep(6)
        menu
      else
        system "clear"
@@ -193,11 +197,6 @@ class InvaderZim::CLI
   def make_characters
     characters_array = InvaderZim::Scraper.scrape_index_page('index.html')
     InvaderZim::Character.create_from_collection(characters_array)
-  end
-  
-  def add_attributes_to_characters(character)
-      attributes = InvaderZim::Scraper.scrape_profile_page(character)
-      character.add_character_attributes(attributes)
   end
   
   def show_characters_list

@@ -16,6 +16,11 @@ class InvaderZim::Character
     attributes_hash.each {|k, v| self.send("#{k}=", v)}
   end
   
+  def add_attributes_to_characters(character)
+      attributes = InvaderZim::Scraper.scrape_profile_page(character)
+      character.add_character_attributes(attributes)
+  end
+  
   def self.find(id)
     self.all[id-1]
   end
