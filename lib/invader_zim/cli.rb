@@ -201,7 +201,7 @@ class InvaderZim::CLI
   
   def show_characters_list
     characters = InvaderZim::Character.all
-    InvaderZim::Character.all.each.with_index(1) do |character, index|
+    characters.each.with_index(1) do |character, index|
       puts CLIColorize.colorize("#{index}. #{character.name}", :cyan)
     end
   end
