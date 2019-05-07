@@ -2,7 +2,7 @@ class InvaderZim::CLI
   
   def call
     system "clear"
-    make_characters
+    InvaderZim::Character.make_characters
     introduction
     menu
   end
@@ -24,9 +24,9 @@ class InvaderZim::CLI
     if input == "skip"
       system "clear"
       print_image("zim.gif")
-    #sleep(2)
+    sleep(2)
       puts CLIColorize.colorize("\nOh, it's you #{@human.name}! I didn't recognize you my most worthy friend! Head down to the secret lair to some rain DOOM upon the DOOMED heads of our DOOMED enemies!" , :green)
-    #sleep(6)
+    sleep(6)
       menu
     else
     system "clear"
@@ -136,7 +136,7 @@ class InvaderZim::CLI
        system "clear"
        print_image("girdisguise.gif")
        puts CLIColorize.colorize("Yay! I'm gunna sing The Doom Song now!\n", :yellow).strip
-       #sleep(3)
+       sleep(3)
        puts CLIColorize.colorize("Doom doom doom doom doom, doom doom do DOOM, DOOOM doom do-doom, DOOM do-doom doom doooom, doom doom dooom, do-do-DOOOM!\n", :yellow).strip
        sleep(5)
        puts CLIColorize.colorize("(6 months later...)\n", :white).strip
@@ -182,7 +182,7 @@ class InvaderZim::CLI
        system "clear"
        print_image("ms_bitters.gif")
        puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
-       #sleep(6)
+       sleep(6)
        menu
      else
        system "clear"
@@ -192,11 +192,6 @@ class InvaderZim::CLI
        menu
      end
   
-  end
-  
-  def make_characters
-    characters_array = InvaderZim::Scraper.scrape_index_page('index.html')
-    InvaderZim::Character.create_from_collection(characters_array)
   end
   
   def show_characters_list

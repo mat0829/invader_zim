@@ -7,6 +7,11 @@ class InvaderZim::Character
     character_hash.each {|k, v| self.send("#{k}=", v)}
     @@all << self
   end
+  
+  def self.make_characters
+    characters_array = InvaderZim::Scraper.scrape_index_page('index.html')
+    self.create_from_collection(characters_array)
+  end
 
   def self.create_from_collection(characters_array)
     characters_array.each {|character| InvaderZim::Character.new(character)}
