@@ -103,29 +103,34 @@ class InvaderZim::CLI
      system "clear"
      print CLIColorize.colorize("Name:", :red).strip
      puts CLIColorize.colorize(" #{character.name}\n", :cyan).strip
+     
      if character.name == "Professor Membrane" || character.name == "Ms. Bitters" || character.name == "Recap Kid"
-      print CLIColorize.colorize("Homeworld:", :red).strip
-      puts CLIColorize.colorize(" Earth", :cyan).strip
+       print CLIColorize.colorize("Homeworld:", :red).strip
+       puts CLIColorize.colorize(" Earth", :cyan).strip
      elsif character.name == "GIR" || character.name == "Minimoose" || character.name == "Roboparents"
-      print CLIColorize.colorize("Homeworld:", :red).strip
-      puts CLIColorize.colorize(" Irk", :cyan).strip
+       print CLIColorize.colorize("Homeworld:", :red).strip
+       puts CLIColorize.colorize(" Irk", :cyan).strip
      else
-      print CLIColorize.colorize("Homeworld:", :red).strip
-      puts CLIColorize.colorize(" #{character.homeworld}", :cyan).strip
+       print CLIColorize.colorize("Homeworld:", :red).strip
+       puts CLIColorize.colorize(" #{character.homeworld}", :cyan).strip
      end
+     
      print CLIColorize.colorize("\nGender:", :red).strip
      puts CLIColorize.colorize(" #{character.gender}\n", :cyan).strip
      if character.affliation == ""
-      print CLIColorize.colorize("Affliation:", :red).strip
-      puts CLIColorize.colorize(" None\n", :cyan).strip
+       print CLIColorize.colorize("Affliation:", :red).strip
+       puts CLIColorize.colorize(" None\n", :cyan).strip
      else
-      print CLIColorize.colorize("Affliation:", :red).strip
-      puts CLIColorize.colorize(" #{character.affliation}\n", :cyan).strip
+       print CLIColorize.colorize("Affliation:", :red).strip
+       puts CLIColorize.colorize(" #{character.affliation}\n", :cyan).strip
      end
+     
      print CLIColorize.colorize("Debut:", :red).strip
      puts CLIColorize.colorize(" #{character.debut}\n", :cyan).strip
+     
      puts CLIColorize.colorize("Introduction:", :red).strip
      puts CLIColorize.colorize("   #{character.introduction}\n", :cyan).strip
+     
      puts CLIColorize.colorize("Appearance:", :red).strip
      puts CLIColorize.colorize("   #{character.appearance}\n", :cyan).strip
      sleep(3)
@@ -143,6 +148,7 @@ class InvaderZim::CLI
        sleep(3)
        puts CLIColorize.colorize("Doom doom doo doom doom, DOOMY-DOOMY-DOOM, doom do do DOOM, Do do DOOM, doomy-doomy-doomy, Doom doom doom THE END." , :yellow).strip
        sleep(6)
+       
        system "clear"
        if character.facts_of_doom == ""
          puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
@@ -163,7 +169,7 @@ class InvaderZim::CLI
           sleep(5)
           menu
         elsif input == "n" || input == "exit"
-           system "clear"
+          system "clear"
           print_image("zim2.gif")
           puts CLIColorize.colorize("Nooooo! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
           puts "*makes wild scratching motions with his arms*"
