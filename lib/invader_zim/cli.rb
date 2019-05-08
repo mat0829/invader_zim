@@ -19,6 +19,7 @@ class InvaderZim::CLI
     @human = InvaderZim::Human.new(input)
     
     puts CLIColorize.colorize("\nIf you would like to skip the introduction type 'skip' and hit Enter or type any key and Enter to continue.\n" , :white).strip
+    
     input = gets.strip.downcase
     
     if input == "skip"
@@ -64,7 +65,7 @@ class InvaderZim::CLI
       sleep(6)
     
       system "clear"
-      puts CLIColorize.colorize("#{@human.name}, would you like to learn more about the amazingness that is me, ZIM, or a     different, far less superior character?" , :green)
+      puts CLIColorize.colorize("#{@human.name}, would you like to learn more about the amazingness that is me, ZIM, or a different, far less superior character?" , :green)
       sleep(5)
     end
   end
@@ -73,6 +74,7 @@ class InvaderZim::CLI
     system "clear"
     show_characters_list
     puts CLIColorize.colorize("\n#{@human.name}, choose a character's number from the list and hit enter.", :red)
+    
     input = gets.strip.to_i
     
     if input.between?(1,14)
@@ -93,7 +95,7 @@ class InvaderZim::CLI
       sleep(4)
       puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@human.name} put in something other then 1 to 14.'\n" , :red)
       sleep(4)
-      puts CLIColorize.colorize("Tallest Purple: '#{@human.name}, You should have tried harder!'\n" , :magenta)
+      puts CLIColorize.colorize("Almighty Tallest Purple: '#{@human.name}, You should have tried harder!'\n" , :magenta)
       sleep(4)
       menu
     end
@@ -137,6 +139,7 @@ class InvaderZim::CLI
      sleep(3)
      
      puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
+     
      input = gets.strip.downcase
      
      if input == "y"
@@ -150,8 +153,8 @@ class InvaderZim::CLI
        sleep(3)
        puts CLIColorize.colorize("Doom doom doo doom doom, DOOMY-DOOMY-DOOM, doom do do DOOM, Do do DOOM, doomy-doomy-doomy, Doom doom doom THE END." , :yellow).strip
        sleep(6)
-       
        system "clear"
+       
        if character.facts_of_doom == ""
          puts CLIColorize.colorize("Sorry #{@human.name}, this character has no Facts of Doom.", :red).strip
          sleep(3)
@@ -162,6 +165,7 @@ class InvaderZim::CLI
        end
        
        puts CLIColorize.colorize("#{@human.name}, would you like to gain knowledge about a different character? Enter Y or N", :red).strip
+       
         input = gets.strip.downcase
         
         if input == "y"
@@ -193,6 +197,7 @@ class InvaderZim::CLI
        sleep(5)
        system "clear"
        puts CLIColorize.colorize("#{@human.name}, would you like to learn about a different character? Enter Y or N", :red).strip
+       
        input = gets.strip.downcase
        
        if input == "y"
@@ -217,7 +222,7 @@ class InvaderZim::CLI
          sleep(3)
          puts CLIColorize.colorize("[gasps, alerts going off]\n", :white).strip
          sleep(3)
-           puts CLIColorize.colorize("OH NO!! YOU PRESSED AN INCORRECT KEY!!\n", :red).strip
+         puts CLIColorize.colorize("OH NO!! YOU PRESSED AN INCORRECT KEY!!\n", :red).strip
          sleep(3)
          puts CLIColorize.colorize("[A large explosion occurs across town and the screen plays elevator music with  'Please Stand By' appearing]\n", :white).strip
          sleep(4)
