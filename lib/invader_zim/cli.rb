@@ -8,6 +8,9 @@ class InvaderZim::CLI
   end
   
   def introduction
+    #image = MiniMagick::Image.open("https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/membrane.png")
+    #image.contrast
+    #image.write("professor.gif")
     print_image("zim.gif")
     sleep(2)
     puts CLIColorize.colorize("Greetings human! It is I, ZIM!\n", :green).strip
@@ -194,18 +197,18 @@ class InvaderZim::CLI
          menu
        elsif input == "n" || input == "exit"
          system "clear"
-         #print_image("professor.gif")
+         print_image("professor.gif")
          puts CLIColorize.colorize("[transmitting from his lab on a floating monitor]\n", :white).strip
          sleep(3)
-         puts CLIColorize.colorize("I'm sorry, but I'm very busy right now.\n", :white).strip
+         puts CLIColorize.colorize("I'm sorry, but I'm very busy right now.\n", :blue).strip
          sleep(3)
-         puts CLIColorize.colorize("We're testing some highly unstable- \n", :white).strip
+         puts CLIColorize.colorize("We're testing some highly unstable- \n", :blue).strip
          sleep(3)
          puts CLIColorize.colorize("[gasps, alerts going off]\n", :white).strip
          sleep(3)
-         puts CLIColorize.colorize("NO!! YOU HAVE THE MIXTURE ALL WRONG!!\n", :white).strip
+         puts CLIColorize.colorize("NO!! YOU HAVE THE MIXTURE ALL WRONG!!\n", :blue).strip
          sleep(3)
-         puts CLIColorize.colorize("[A large explosion occurs across town and the screen goes dark and plays elevator  music with a 'Please Stand By' appearing]\n", :white).strip
+         puts CLIColorize.colorize("[A large explosion occurs across town and the screen plays elevator music with  'Please Stand By' appearing]\n", :white).strip
          sleep(4)
          exit
        else
@@ -242,5 +245,7 @@ class InvaderZim::CLI
     :bg_fill => false,
     :resolution => "high"
   end
+  
+  
   
 end
