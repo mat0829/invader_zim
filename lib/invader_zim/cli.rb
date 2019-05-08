@@ -8,9 +8,6 @@ class InvaderZim::CLI
   end
   
   def introduction
-    #image = MiniMagick::Image.open("https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/membrane.png")
-    #image.contrast
-    #image.write("professor.gif")
     print_image("zim.gif")
     sleep(2)
     puts CLIColorize.colorize("Greetings human! It is I, ZIM!\n", :green).strip
@@ -156,7 +153,7 @@ class InvaderZim::CLI
          sleep(3)
        end
        
-       puts CLIColorize.colorize("#{@human.name}, would you like to gain more knowledge about a different character? Enter Y or N", :red).strip
+       puts CLIColorize.colorize("#{@human.name}, would you like to gain knowledge about a different character? Enter Y or N", :red).strip
      
         input = gets.strip.downcase
         if input == "y"
@@ -184,21 +181,27 @@ class InvaderZim::CLI
      elsif input == "n"
        system "clear"
        print_image("ms_bitters.gif")
-       puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.\n", :magenta).strip
-       sleep(6)
+       puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will get a phone call instructing them to love you less.\n", :magenta).strip
+       sleep(5)
        system "clear"
-       puts CLIColorize.colorize("#{@human.name}, would you like to gain more knowledge about a different character? Enter Y or N", :red).strip
+       puts CLIColorize.colorize("#{@human.name}, would you like to learn about a different character? Enter Y or N", :red).strip
        
        input = gets.strip.downcase
        if input == "y"
          print_image("recap_kid.gif")
-         puts CLIColorize.colorize("Previously in Invader Zim's Secret Lair...", :white).strip
+         puts CLIColorize.colorize("Previously at Invader Zim'm Secret Lair...", :white).strip
          sleep(4)
          menu
        elsif input == "n" || input == "exit"
          system "clear"
+         print_image("sad_gir.gif")
+         puts CLIColorize.colorize("\nWhy!? Why!? I loveded you! I loveded you!\n", :white).strip
+         sleep(5)
+         exit
+       else
+         system "clear"
          print_image("professor.gif")
-         puts CLIColorize.colorize("[transmitting from his lab on a floating monitor]\n", :white).strip
+         puts CLIColorize.colorize("\n[transmitting from his lab on a floating monitor]\n", :white).strip
          sleep(3)
          puts CLIColorize.colorize("I'm sorry, but I'm very busy right now.\n", :blue).strip
          sleep(3)
@@ -206,15 +209,9 @@ class InvaderZim::CLI
          sleep(3)
          puts CLIColorize.colorize("[gasps, alerts going off]\n", :white).strip
          sleep(3)
-         puts CLIColorize.colorize("NO!! YOU HAVE THE MIXTURE ALL WRONG!!\n", :blue).strip
+           puts CLIColorize.colorize("OH NO!! YOU PRESSED AN INCORRECT KEY!!\n", :blue).strip
          sleep(3)
          puts CLIColorize.colorize("[A large explosion occurs across town and the screen plays elevator music with  'Please Stand By' appearing]\n", :white).strip
-         sleep(4)
-         exit
-       else
-         system "clear"
-         #print_image("recap_kid.gif")
-         puts CLIColorize.colorize("You have entered an incorrect choice.", :white).strip
          sleep(4)
          menu
        end
@@ -245,7 +242,5 @@ class InvaderZim::CLI
     :bg_fill => false,
     :resolution => "high"
   end
-  
-  
   
 end
