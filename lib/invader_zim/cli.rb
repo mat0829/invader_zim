@@ -201,15 +201,15 @@ class InvaderZim::CLI
        else
          system "clear"
          print_image("professor.gif")
-         puts CLIColorize.colorize("\n[transmitting from his lab on a floating monitor]\n", :white).strip
+         puts CLIColorize.colorize("[transmitting from his lab on a floating monitor]\n", :white).strip
          sleep(3)
-         puts CLIColorize.colorize("I'm sorry, but I'm very busy right now.\n", :blue).strip
+         puts CLIColorize.colorize("I'm sorry, but I'm very busy right now.\n", :red).strip
          sleep(3)
-         puts CLIColorize.colorize("We're testing some highly unstable- \n", :blue).strip
+         puts CLIColorize.colorize("We're testing some highly unstable- \n", :red).strip
          sleep(3)
          puts CLIColorize.colorize("[gasps, alerts going off]\n", :white).strip
          sleep(3)
-           puts CLIColorize.colorize("OH NO!! YOU PRESSED AN INCORRECT KEY!!\n", :blue).strip
+           puts CLIColorize.colorize("OH NO!! YOU PRESSED AN INCORRECT KEY!!\n", :red).strip
          sleep(3)
          puts CLIColorize.colorize("[A large explosion occurs across town and the screen plays elevator music with  'Please Stand By' appearing]\n", :white).strip
          sleep(4)
