@@ -19,8 +19,8 @@ class InvaderZim::CLI
     @human = InvaderZim::Human.new(input)
     
     puts CLIColorize.colorize("\nIf you would like to skip the introduction type 'skip' and hit Enter or type any key and Enter to continue.\n" , :white).strip
-    
     input = gets.strip.downcase
+    
     if input == "skip"
       system "clear"
       print_image("zim.gif")
@@ -29,43 +29,43 @@ class InvaderZim::CLI
     sleep(6)
       menu
     else
-    system "clear"
-    print_image("zim.gif")
-    sleep(2)
-    puts CLIColorize.colorize("\nComputer, give me all the information you have on #{@human.name}.\n", :green).strip
-    sleep(3)
+      system "clear"
+      print_image("zim.gif")
+      sleep(2)
+      puts CLIColorize.colorize("\nComputer, give me all the information you have on #{@human.name}.\n", :green).strip
+      sleep(3)
     
-    puts CLIColorize.colorize("#{@human.name} is a disgruntled human.\n", :red).strip
-    sleep(3)
+      puts CLIColorize.colorize("#{@human.name} is a disgruntled human.\n", :red).strip
+      sleep(3)
     
-    puts CLIColorize.colorize("Continue.\n", :green).strip
-    sleep(3)
+      puts CLIColorize.colorize("Continue.\n", :green).strip
+      sleep(3)
     
-    puts CLIColorize.colorize("Insufficient data.\n", :red).strip
-    sleep(3)
+      puts CLIColorize.colorize("Insufficient data.\n", :red).strip
+      sleep(3)
     
-    puts CLIColorize.colorize("Insufficient data? Can't you just make an educated guess?\n", :green).strip
-    sleep(3)
+      puts CLIColorize.colorize("Insufficient data? Can't you just make an educated guess?\n", :green).strip
+      sleep(3)
     
-    puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?\n", :red).strip
-    sleep(5)
+      puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?\n", :red).strip
+      sleep(5)
     
-    puts CLIColorize.colorize("I KNEW IT!\n", :green).strip
-    sleep(3)
+      puts CLIColorize.colorize("I KNEW IT!\n", :green).strip
+      sleep(3)
     
-    puts CLIColorize.colorize("Congratulations #{@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!\n", :green)
-    sleep(5)
+      puts CLIColorize.colorize("Congratulations #{@human.name}. I have checked your AMAZINGNESS and found you to be WORTHY, SO VERY WORTHY, to be friends with ZIM! Praise you! PRAISE YOU!!!\n", :green)
+      sleep(5)
     
-    puts CLIColorize.colorize("Follow us to the secret lair #{@human.name}.\n", :green)
-    sleep(4)
-    system "clear"
-    print_image("zim_and_gir.gif")
-    puts CLIColorize.colorize("*You stand on the platform and start descending*\n" , :white)
-    sleep(8)
+      puts CLIColorize.colorize("Follow us to the secret lair #{@human.name}.\n", :green)
+      sleep(4)
+      system "clear"
+      print_image("zim_and_gir.gif")
+      puts CLIColorize.colorize("*You stand on the platform and start descending*\n" , :white)
+      sleep(6)
     
-    system "clear"
-    puts CLIColorize.colorize("#{@human.name}, would you like to learn more about the amazingness that is me, ZIM, or a   different, far less superior character?" , :green)
-    sleep(5)
+      system "clear"
+      puts CLIColorize.colorize("#{@human.name}, would you like to learn more about the amazingness that is me, ZIM, or a     different, far less superior character?" , :green)
+      sleep(5)
     end
   end
   
@@ -174,7 +174,7 @@ class InvaderZim::CLI
           print_image("gir_transformation.gif")
           sleep(3)
           puts CLIColorize.colorize("Leprechauns!", :yellow).strip
-          sleep(6)
+          sleep(5)
           menu
         end
        
