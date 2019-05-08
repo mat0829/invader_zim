@@ -26,7 +26,7 @@ class InvaderZim::CLI
       print_image("zim.gif")
     sleep(2)
       puts CLIColorize.colorize("\nOh, it's you #{@human.name}! I didn't recognize you my most worthy friend! Head down to the secret lair to some rain DOOM upon the DOOMED heads of our DOOMED enemies!" , :green)
-    sleep(6)
+    sleep(5)
       menu
     else
       system "clear"
@@ -117,6 +117,7 @@ class InvaderZim::CLI
      
      print CLIColorize.colorize("\nGender:", :red).strip
      puts CLIColorize.colorize(" #{character.gender}\n", :cyan).strip
+     
      if character.affliation == ""
        print CLIColorize.colorize("Affliation:", :red).strip
        puts CLIColorize.colorize(" None\n", :cyan).strip
@@ -134,9 +135,10 @@ class InvaderZim::CLI
      puts CLIColorize.colorize("Appearance:", :red).strip
      puts CLIColorize.colorize("   #{character.appearance}\n", :cyan).strip
      sleep(3)
-     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      
+     puts CLIColorize.colorize("#{@human.name}, would you like to know some Facts of Doom!? Enter Y or N", :red).strip
      input = gets.strip.downcase
+     
      if input == "y"
        system "clear"
        print_image("girdisguise.gif")
@@ -160,8 +162,8 @@ class InvaderZim::CLI
        end
        
        puts CLIColorize.colorize("#{@human.name}, would you like to gain knowledge about a different character? Enter Y or N", :red).strip
-     
         input = gets.strip.downcase
+        
         if input == "y"
           system "clear"
           print_image("gir_red.gif")
@@ -172,7 +174,7 @@ class InvaderZim::CLI
           system "clear"
           print_image("zim2.gif")
           puts CLIColorize.colorize("Nooooo! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
-          puts "*makes wild scratching motions with his arms*"
+          puts CLIColorize.colorize("*makes wild scratching motions with his arms*\n", :white).strip
           sleep(5)
           exit
         else
@@ -191,11 +193,11 @@ class InvaderZim::CLI
        sleep(5)
        system "clear"
        puts CLIColorize.colorize("#{@human.name}, would you like to learn about a different character? Enter Y or N", :red).strip
-       
        input = gets.strip.downcase
+       
        if input == "y"
          print_image("recap_kid.gif")
-         puts CLIColorize.colorize("Previously at Invader Zim'm Secret Lair...", :white).strip
+         puts CLIColorize.colorize("Previously at Invader Zim's Secret Lair...", :white).strip
          sleep(4)
          menu
        elsif input == "n" || input == "exit"
