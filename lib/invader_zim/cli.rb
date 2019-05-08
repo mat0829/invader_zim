@@ -160,9 +160,9 @@ class InvaderZim::CLI
           system "clear"
           print_image("gir_red.gif")
           puts CLIColorize.colorize("\nThe knowledge, it fills me. It is neat.", :yellow).strip
-          sleep(6)
+          sleep(5)
           menu
-        elsif input == "n"
+        elsif input == "n" || input == "exit"
            system "clear"
           print_image("zim2.gif")
           puts CLIColorize.colorize("Nooooo! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
@@ -181,9 +181,40 @@ class InvaderZim::CLI
      elsif input == "n"
        system "clear"
        print_image("ms_bitters.gif")
-       puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.", :magenta).strip
+       puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will receive a phone call instructing them to love you less.\n", :magenta).strip
        sleep(6)
-       menu
+       system "clear"
+       puts CLIColorize.colorize("#{@human.name}, would you like to gain more knowledge about a different character? Enter Y or N", :red).strip
+       
+       input = gets.strip.downcase
+       if input == "y"
+         print_image("recap_kid.gif")
+         puts CLIColorize.colorize("Previously in Invader Zim's Secret Lair...", :white).strip
+         sleep(4)
+         menu
+       elsif input == "n" || input == "exit"
+         system "clear"
+         #print_image("professor.gif")
+         puts CLIColorize.colorize("[transmitting from his lab on a floating monitor]\n", :white).strip
+         sleep(3)
+         puts CLIColorize.colorize("I'm sorry, but I'm very busy right now.\n", :white).strip
+         sleep(3)
+         puts CLIColorize.colorize("We're testing some highly unstable- \n", :white).strip
+         sleep(3)
+         puts CLIColorize.colorize("[gasps, alerts going off]\n", :white).strip
+         sleep(3)
+         puts CLIColorize.colorize("NO!! YOU HAVE THE MIXTURE ALL WRONG!!\n", :white).strip
+         sleep(3)
+         puts CLIColorize.colorize("[A large explosion occurs across town and the screen goes dark and plays elevator  music with a 'Please Stand By' appearing]\n", :white).strip
+         sleep(4)
+         exit
+       else
+         system "clear"
+         #print_image("recap_kid.gif")
+         puts CLIColorize.colorize("You have entered an incorrect choice.", :white).strip
+         sleep(4)
+         menu
+       end
      else
        system "clear"
        print_image("mini_moose.gif")
