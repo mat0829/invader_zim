@@ -2,6 +2,7 @@ class InvaderZim::CLI
   
   def call
     system "clear"
+    create_images
     InvaderZim::Character.make_characters
     introduction
     menu
@@ -284,6 +285,12 @@ class InvaderZim::CLI
     end
   end
   
+  def get_image(img, url)
+    image = MiniMagick::Image.open(url)
+    image.contrast
+    image.write(img)
+  end
+  
   def print_image(img)
     CatpixMini::print_image img,
     :limit_x => 1,
@@ -293,6 +300,26 @@ class InvaderZim::CLI
     :bg => "white",
     :bg_fill => false,
     :resolution => "high"
+  end
+  
+  def create_images
+    count = 0
+    until count == 1
+      get_image("zim.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/zim5.png")
+      get_image("zim_and_gir.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/zim_and_gir.gif")
+      get_image("almighty_tallest.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/thetallestb.png")
+      get_image("girdisguise.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/girb.png")
+      get_image("gir_red.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/gir_red.gif")
+      get_image("zim2.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/zim2b.png")
+      get_image("gir_transformation.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/girtransformation.png")
+      get_image("ms_bitters.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/ms_bittersblack.png")
+      get_image("recap_kid.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/recap_kid_final.png")
+      get_image("sad_gir.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/sad_gir.gif")
+      get_image("professor.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/membrane.png")
+      get_image("moose.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/moosered.gif")
+      get_image("mini_moose.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/minimoose_1.gif")
+      count += 1
+    end
   end
   
 end
