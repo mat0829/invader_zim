@@ -264,7 +264,7 @@ class InvaderZim::CLI
        print_image("zim.gif")
        puts CLIColorize.colorize("Your...moosey fate!\n", :green).strip
        sleep(3)
-       puts CLIColorize.colorize("[Gir laughs hysterically. Zim hesitates, then laughs too.]\n", :white).strip
+       puts CLIColorize.colorize("[Gir laughs hysterically. Zim hesitates, then laughs too and then launches you into space]\n", :white).strip
        sleep(4)
        exit
      else
