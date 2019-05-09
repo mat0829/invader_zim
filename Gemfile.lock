@@ -35,8 +35,8 @@ DEPENDENCIES
   cli-colorize (~> 2.0)
   invader_zim!
   mini_magick (~> 4.7)
-  nokogiri
-  pry
+  nokogiri (~> 1.10.2)
+  pry (~> 0.12.2)
   rake (~> 10.0)
   tco (~> 0.1.8)
 

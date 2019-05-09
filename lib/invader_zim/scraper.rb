@@ -48,17 +48,17 @@ require 'open-uri'
           
           case character.name 
           when "Roboparents"
-            character_page_traits[:affliation] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
+            character_page_traits[:affiliation] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
           when "Gir", "Minimoose"
-            character_page_traits[:affliation] ||= table.css("td")[9].text[13..15].strip.gsub(/[\n]/, '')
+            character_page_traits[:affiliation] ||= table.css("td")[9].text[13..15].strip.gsub(/[\n]/, '')
           when "Dib Membrane", "Gaz Membrane", "Keef"
-            character_page_traits[:affliation] ||= table.css("td")[11].text.strip.gsub(/[\n]/, '')
+            character_page_traits[:affiliation] ||= table.css("td")[11].text.strip.gsub(/[\n]/, '')
           when "Almighty Tallest Red", "Almighty Tallest Purple", "Tak"
-            character_page_traits[:affliation] ||= table.css("td")[13].text.strip.gsub(/[\n]/, '')
+            character_page_traits[:affiliation] ||= table.css("td")[13].text.strip.gsub(/[\n]/, '')
           when "Zim", "Invader Skoodge"
-            character_page_traits[:affliation] ||= table.css("td")[17].text.strip.gsub(/[\n]/, '')
+            character_page_traits[:affiliation] ||= table.css("td")[17].text.strip.gsub(/[\n]/, '')
           else
-            character_page_traits[:affliation] ||= table.css("td")[1].text.strip.gsub(/[\n]/, '')
+            character_page_traits[:affiliation] ||= table.css("td")[1].text.strip.gsub(/[\n]/, '')
           end
           
           case character.name

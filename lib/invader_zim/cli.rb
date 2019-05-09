@@ -93,7 +93,7 @@ class InvaderZim::CLI
       sleep(4)
       puts CLIColorize.colorize("Almighty Tallest Red: 'I am running a diagnostic to find the problem! YOU! Save the doughnuts!'\n" , :red)
       sleep(4)
-      puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@human.name} put in something other then 1 to 14.'\n" , :red)
+      puts CLIColorize.colorize("Almighty Tallest Red: 'I found the problem. #{@human.name} put in something other than 1 to 14.'\n" , :red)
       sleep(4)
       puts CLIColorize.colorize("Almighty Tallest Purple: '#{@human.name}, You should have tried harder!'\n" , :magenta)
       sleep(4)
@@ -120,12 +120,12 @@ class InvaderZim::CLI
      print CLIColorize.colorize("\nGender:", :red).strip
      puts CLIColorize.colorize(" #{character.gender}\n", :cyan).strip
      
-     if character.affliation == ""
-       print CLIColorize.colorize("Affliation:", :red).strip
+     if character.affiliation == ""
+       print CLIColorize.colorize("Affiliation:", :red).strip
        puts CLIColorize.colorize(" None\n", :cyan).strip
      else
-       print CLIColorize.colorize("Affliation:", :red).strip
-       puts CLIColorize.colorize(" #{character.affliation}\n", :cyan).strip
+       print CLIColorize.colorize("Affiliation:", :red).strip
+       puts CLIColorize.colorize(" #{character.affiliation}\n", :cyan).strip
      end
      
      print CLIColorize.colorize("Debut:", :red).strip
