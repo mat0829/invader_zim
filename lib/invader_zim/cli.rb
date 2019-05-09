@@ -303,8 +303,6 @@ class InvaderZim::CLI
   end
   
   def create_images
-    count = 0
-    until count == 1
       get_image("zim.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/zim5.png")
       get_image("zim_and_gir.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/zim_and_gir.gif")
       get_image("almighty_tallest.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/thetallestb.png")
@@ -317,9 +315,7 @@ class InvaderZim::CLI
       get_image("sad_gir.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/sad_gir.gif")
       get_image("professor.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/membrane.png")
       get_image("moose.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/moosered.gif")
-      get_image("mini_moose.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/minimoose_1.gif")
-      count += 1
-    end
+      get_image("mini_moose.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/Moose_float.gif")
   end
   
 end
