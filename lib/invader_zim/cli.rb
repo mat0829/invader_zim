@@ -48,7 +48,7 @@ class InvaderZim::CLI
       puts CLIColorize.colorize("Insufficient data? Can't you just make an educated guess?\n", :green).strip
       sleep(3)
     
-      puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1940 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?\n", :red).strip
+      puts CLIColorize.colorize("O... kay... Um, #{@human.name} was born in a year between 1910 and.....now to, uh... demons, and trained to... uh, I dunno, fight... ninjas and rain DOOM?\n", :red).strip
       sleep(5)
     
       puts CLIColorize.colorize("I KNEW IT!\n", :green).strip
@@ -61,7 +61,7 @@ class InvaderZim::CLI
       sleep(4)
       system "clear"
       print_image("zim_and_gir.gif")
-      puts CLIColorize.colorize("*You stand on the platform and start descending*\n" , :white)
+      puts CLIColorize.colorize("[You stand on the platform and start descending]\n" , :white)
       sleep(6)
     
       system "clear"
@@ -178,7 +178,7 @@ class InvaderZim::CLI
           system "clear"
           print_image("zim2.gif")
           puts CLIColorize.colorize("Nooooo! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
-          puts CLIColorize.colorize("*makes wild scratching motions with his arms*\n", :white).strip
+          puts CLIColorize.colorize("[makes wild scratching motions with his arms]\n", :white).strip
           sleep(5)
           exit
         else
@@ -190,7 +190,7 @@ class InvaderZim::CLI
           menu
         end
        
-     elsif input == "n"
+     elsif input == "n" 
        system "clear"
        print_image("ms_bitters.gif")
        puts CLIColorize.colorize("\n#{@human.name}, your performance was miserable! Your parents will get a phone call instructing them to love you less.\n", :magenta).strip
@@ -229,6 +229,44 @@ class InvaderZim::CLI
          sleep(4)
          menu
        end
+     
+     elsif input == "exit"
+       system "clear"
+       print_image("zim.gif")
+       puts CLIColorize.colorize("For your betrayal in attempting leave I have decided to launch you into space.\n", :green).strip
+       sleep(4)
+       puts CLIColorize.colorize("Launching you into space is just the first part of my plan! Now is where the fun really starts!\n", :green).strip
+       sleep(4)
+       puts CLIColorize.colorize("I researched many different wormholes with many possible outcomes. It was a very difficult decision deciding which wormhole would be the most horrible for you.\n", :green).strip
+       sleep(5)
+       puts CLIColorize.colorize("One wormhole would have spat you out into a dimension of pure itching!\n", :green).strip
+       sleep(4)
+       puts CLIColorize.colorize("Another would've sent you to a dimension of pure dookie! \n", :green).strip
+       sleep(4)
+       puts CLIColorize.colorize("But I chose this particular wormhole especially for the occasion.\n", :green).strip
+       sleep(4)
+       puts CLIColorize.colorize("You see, at the end of this wormhole lies... a room... with a moose!\n", :green).strip
+       sleep(4)
+       system "clear"
+       print_image("moose.gif")
+       sleep(6)
+       system "clear"
+       print_image("zim.gif")
+       puts CLIColorize.colorize("Prepare your bladder for imminent release!\n", :green).strip
+       sleep(4)
+       puts CLIColorize.colorize("Now, #{@human.name}. I leave you to your... em... \n", :green).strip
+       sleep(4)
+       system "clear"
+       print_image("girdisguise.gif")
+       puts CLIColorize.colorize("Moosey fate, say moosey fate!\n", :yellow).strip
+       sleep(4)
+       system "clear"
+       print_image("zim.gif")
+       puts CLIColorize.colorize("Your...moosey fate!\n", :green).strip
+       sleep(3)
+       puts CLIColorize.colorize("[Gir laughs hysterically. Zim hesitates, then laughs too.]\n", :white).strip
+       sleep(4)
+       exit
      else
        system "clear"
        print_image("mini_moose.gif")
