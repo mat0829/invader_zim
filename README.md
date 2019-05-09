@@ -30,7 +30,7 @@ Put these in your terminal:
 
 Type the below and follow the on screen prompts.
 
-    $ invader-zim
+    $ invader_zim
 
 ## Development
 
