@@ -201,6 +201,7 @@ class InvaderZim::CLI
        input = gets.strip.downcase
        
        if input == "y"
+         system "clear"
          print_image("recap_kid.gif")
          puts CLIColorize.colorize("Previously at Invader Zim's Secret Lair...", :white).strip
          sleep(4)
