@@ -5,7 +5,7 @@ PATH
       catpix_mini (~> 0.1.1)
       cli-colorize (~> 2.0)
       mini_magick (~> 4.7)
-      nokogiri
+      nokogiri (~> 1.10.3)
       pry (~> 0.12.2)
       tco (~> 0.1.8)
 
