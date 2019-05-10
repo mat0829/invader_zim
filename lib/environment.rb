@@ -5,7 +5,7 @@ require_relative "invader_zim/scraper"
 require_relative "invader_zim/human"
 
 
-require 'pry'
+#require 'pry'
 require 'open-uri'
 require 'nokogiri'
 require 'cli-colorize'
