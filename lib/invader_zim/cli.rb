@@ -234,7 +234,7 @@ class InvaderZim::CLI
      elsif input == "exit"
        system "clear"
        print_image("zim.gif")
-       puts CLIColorize.colorize("For your betrayal in attempting leave to I have decided to launch you into space.\n", :green).strip
+       puts CLIColorize.colorize("For your betrayal in attempting to leave I have decided to launch you into space.\n", :green).strip
        sleep(4)
        puts CLIColorize.colorize("Launching you into space is just the first part of my plan! Now is where the fun really starts!\n", :green).strip
        sleep(4)
