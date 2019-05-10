@@ -9,6 +9,7 @@ class InvaderZim::CLI
   end
   
   def introduction
+    system "clear"
     print_image("zim.gif")
     sleep(2)
     puts CLIColorize.colorize("Greetings human! It is I, ZIM!\n", :green).strip
@@ -181,6 +182,7 @@ class InvaderZim::CLI
           puts CLIColorize.colorize("Nooooo! You lie! YOU LIIIIIIIIIEEEEEEEEEE!!!!!\n", :green).strip
           puts CLIColorize.colorize("[makes wild scratching motions with his arms]\n", :white).strip
           sleep(5)
+          delete_all_images
           exit
         else
           system "clear"
@@ -210,8 +212,9 @@ class InvaderZim::CLI
        elsif input == "n" || input == "exit"
          system "clear"
          print_image("sad_gir.gif")
-         puts CLIColorize.colorize("\nWhy!? Why!? I loveded you! I loveded you!\n", :white).strip
+         puts CLIColorize.colorize("\nWhy!? Why!? I loveded you! I loveded you!\n", :yellow).strip
          sleep(5)
+         delete_all_images
          exit
        else
          system "clear"
@@ -234,7 +237,7 @@ class InvaderZim::CLI
      elsif input == "exit"
        system "clear"
        print_image("zim.gif")
-       puts CLIColorize.colorize("For your betrayal in attempting to leave I have decided to launch you into space.\n", :green).strip
+       puts CLIColorize.colorize("For your betrayal in attempting to leave I have decided to launch you into space\n", :green).strip
        sleep(4)
        puts CLIColorize.colorize("Launching you into space is just the first part of my plan! Now is where the fun really starts!\n", :green).strip
        sleep(4)
@@ -265,8 +268,9 @@ class InvaderZim::CLI
        print_image("zim.gif")
        puts CLIColorize.colorize("Your...moosey fate!\n", :green).strip
        sleep(3)
-       puts CLIColorize.colorize("[Gir laughs hysterically. Zim hesitates, then laughs too and then launches you into space]\n", :white).strip
+       puts CLIColorize.colorize("[Gir laughs hysterically. Zim hesitates, then laughs too and then launches you  into space]\n", :white).strip
        sleep(4)
+       delete_all_images
        exit
      else
        system "clear"
@@ -303,6 +307,10 @@ class InvaderZim::CLI
   end
   
   def create_images
+      puts CLIColorize.colorize("One moment while I load the necessary images to make you worthy of ZIM!\n", :white).strip
+      sleep(3)
+      puts CLIColorize.colorize("They will be deleted upon your exit and you will be a little less awesome.", :white).strip
+      sleep(2)
       get_image("zim.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/zim5.png")
       get_image("zim_and_gir.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/zim_and_gir.gif")
       get_image("almighty_tallest.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/thetallestb.png")
@@ -318,4 +326,25 @@ class InvaderZim::CLI
       get_image("mini_moose.gif", "https://oi27.photobucket.com/albums/c180/LVSpiritSeeker/Moose_float.gif")
   end
   
+  def delete_image(img)
+    File.delete(img) if File.exist?(img)
+  end
+  
+  def delete_all_images
+    delete_image("almighty_tallest.gif")
+    delete_image("girdisguise.gif")
+    delete_image("gir_red.gif")
+    delete_image("gir_transformation.gif")
+    delete_image("mini_moose.gif")
+    delete_image("moose.gif")
+    delete_image("ms_bitters.gif")
+    delete_image("professor.gif")
+    delete_image("recap_kid.gif")
+    delete_image("sad_gir.gif")
+    delete_image("zim2.gif")
+    delete_image("zim_and_gir.gif")
+    delete_image("zim.gif")
+    system "clear"
+  end
+
 end

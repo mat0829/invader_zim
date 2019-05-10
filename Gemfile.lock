@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    invader_zim (0.1.6)
+    invader_zim (0.1.7)
       catpix_mini (~> 0.1.1)
       cli-colorize (~> 2.0)
       mini_magick (~> 4.7)
