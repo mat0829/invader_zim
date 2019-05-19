@@ -49,7 +49,7 @@ require 'open-uri'
           case character.name 
           when "Roboparents"
             character_page_traits[:affiliation] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
-          when "Gir", "Minimoose"
+          when "GIR", "Minimoose"
             character_page_traits[:affiliation] ||= table.css("td")[9].text[13..15].strip.gsub(/[\n]/, '')
           when "Dib Membrane", "Gaz Membrane", "Keef"
             character_page_traits[:affiliation] ||= table.css("td")[11].text.strip.gsub(/[\n]/, '')
