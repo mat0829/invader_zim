@@ -38,7 +38,7 @@ require 'open-uri'
           end
           
           case character.name
-          when "Dib Membrane", "Gaz Membrane", "Keef", "Roboparents"
+          when "Gaz Membrane", "Keef", "Roboparents"
             character_page_traits[:gender] ||= table.css("td")[5].text.strip.gsub(/[\n]/, '')
           when "Zim", "Invader Skoodge"
             character_page_traits[:gender] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
@@ -51,9 +51,9 @@ require 'open-uri'
             character_page_traits[:affiliation] ||= table.css("td")[9].text.strip.gsub(/[\n]/, '')
           when "GIR", "Minimoose"
             character_page_traits[:affiliation] ||= table.css("td")[9].text[13..15].strip.gsub(/[\n]/, '')
-          when "Dib Membrane", "Gaz Membrane", "Keef"
+          when "Gaz Membrane", "Keef"
             character_page_traits[:affiliation] ||= table.css("td")[11].text.strip.gsub(/[\n]/, '')
-          when "Almighty Tallest Red", "Almighty Tallest Purple", "Tak"
+          when "Dib Membrane", "Almighty Tallest Red", "Almighty Tallest Purple", "Tak"
             character_page_traits[:affiliation] ||= table.css("td")[13].text.strip.gsub(/[\n]/, '')
           when "Zim", "Invader Skoodge"
             character_page_traits[:affiliation] ||= table.css("td")[17].text.strip.gsub(/[\n]/, '')
