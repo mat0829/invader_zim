@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency     "mini_magick", "~> 4.7"
   spec.add_runtime_dependency     "catpix_mini", "~> 0.1.1"
   spec.add_runtime_dependency     "tco", "~> 0.1.8"
-  spec.add_runtime_dependency     "nokogiri", "~> 1.10.3"
+  spec.add_runtime_dependency     "nokogiri", ">= 1.10.3", "< 1.15.0"
   
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 13.0"
